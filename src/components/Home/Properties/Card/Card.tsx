@@ -12,6 +12,7 @@ interface Property {
     beds: number,
     baths: number,
     image: string
+    area: number
 }
 
 const PropertyCard: React.FC<{ item: Property }> = ({ item }) => {
