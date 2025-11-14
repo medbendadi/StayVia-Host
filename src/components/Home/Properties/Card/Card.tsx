@@ -12,7 +12,10 @@ interface Property {
     beds: number,
     baths: number,
     image: string
+<<<<<<< HEAD
     area: number
+=======
+>>>>>>> 3358b9ea83e8dec8c785d261b55e7fc4d2a894f8
 }
 
 const PropertyCard: React.FC<{ item: Property }> = ({ item }) => {
