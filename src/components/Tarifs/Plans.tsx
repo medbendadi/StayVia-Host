@@ -7,7 +7,7 @@ interface PlanProps {
         subtitle: string,
         price: string,
         type: string,
-        features: []
+        features: string[]
     }
 }
 
