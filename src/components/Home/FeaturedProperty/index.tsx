@@ -74,22 +74,22 @@ const FeaturedProperty: React.FC = () => {
             <div>
               <p className="text-dark/75 dark:text-white/75 text-base font-semibold flex gap-2">
                 <Icon icon="ph:house-simple-fill" className="text-2xl text-primary " />
-                Featured property
+                  Sélection exclusive
               </p>
               <h2 className="lg:text-52 text-40 font-medium text-dark dark:text-white">
-                Modern luxe villa
+                Perle centrale – Raffinement et confort à Palmier
               </h2>
               <div className="flex items-center gap-2.5">
                 <Icon icon="ph:map-pin" width={28} height={26} className="text-dark/50 dark:text-white/50" />
                 <p className="text-dark/50 dark:text-white/50 text-base">
-                  20 S Aurora Ave, Miami
+                  Casablanca, Casablanca-Settat, Morocco
                 </p>
               </div>
             </div>
             <p className="text-base text-dark/50 dark:text-white/50">
-              Experience luxury living at modern luxe villa, located at 20 S Aurora Ave, Miami. Priced at $1,650,500, this 560 ft² smart home offers 4 bedrooms,
-              3 bathrooms, and spacious living areas. Enjoy energy efficiency, natural light, security systems, outdoor spaces, and 2 bar areas—perfect for 8+
-              guests. Built in 2025.
+            Bienvenue à Casa Dalida, studio élégant et lumineux, au design raffiné et à la décoration chic, offrant un cadre chaleureux et un caractère d’exception.
+Idéal pour affaires ou détente, il propose un espace de travail dédié avec Wi-Fi rapide et fiable, alliant confort moderne et emplacement stratégique.
+Situé au cœur de Casablanca, dans le quartier Palmier–Maarif, à proximité des meilleurs restaurants, commerces et transports, Casa Dalida est le choix parfait pour une expérience mémorable.
             </p>
             <div className="grid grid-cols-2 gap-10">
               <div className="flex items-center gap-4">
@@ -111,7 +111,7 @@ const FeaturedProperty: React.FC = () => {
                     unoptimized={true}
                   />
                 </div>
-                <h6 className="">4 Bedrooms</h6>
+                <h6 className="">4 Chambres</h6>
               </div>
               <div className="flex items-center gap-4">
                 <div className="bg-dark/5 dark:bg-white/5 p-2.5 rounded-[6px]">
@@ -132,7 +132,7 @@ const FeaturedProperty: React.FC = () => {
                     unoptimized={true}
                   />
                 </div>
-                <h6 className="">3 Bathrooms</h6>
+                <h6 className="">1 Salle de bain</h6>
               </div>
               <div className="flex items-center gap-4">
                 <div className="bg-dark/5 dark:bg-white/5 p-2.5 rounded-[6px]">
@@ -153,12 +153,12 @@ const FeaturedProperty: React.FC = () => {
                     unoptimized={true}
                   />
                 </div>
-                <h6 className="">Parking Space</h6>
+                <h6 className="">Parking gratuit sur place</h6>
               </div>
               <div className="flex items-center gap-4">
                 <div className="bg-dark/5 dark:bg-white/5 p-2.5 rounded-[6px]">
                   <Image
-                    src={'/images/hero/bar.svg'}
+                    src={'/images/SVGs/wifi.svg'}
                     alt='bar'
                     width={24}
                     height={24}
@@ -166,7 +166,7 @@ const FeaturedProperty: React.FC = () => {
                     unoptimized={true}
                   />
                   <Image
-                    src={'/images/hero/dark-bar.svg'}
+                    src={'/images/SVGs/wifi-dark.svg'}
                     alt='bar'
                     width={24}
                     height={24}
@@ -174,20 +174,14 @@ const FeaturedProperty: React.FC = () => {
                     unoptimized={true}
                   />
                 </div>
-                <h6 className="">2 Bar areas</h6>
+                <h6 className="">Wifi rapide (97 Mbit/s)</h6>
               </div>
             </div>
-            <div className="flex gap-10">
-              <Link href="/contactus" className="py-4 px-8 bg-primary hover:bg-dark duration-300 rounded-full text-white">
-                Get in touch
+            <div className="flex mx-auto">
+              <Link href="https://www.airbnb.fr/rooms/1302830074296234152" target="_blank" className="py-4 px-[6rem] bg-primary hover:bg-dark duration-300 rounded-full text-white">
+                Réserver
               </Link>
               <div>
-                <h4 className="text-3xl text-dark dark:text-white font-medium">
-                  $1,650,500
-                </h4>
-                <p className="text-base text-dark/50">
-                  Discounted price
-                </p>
               </div>
             </div>
           </div>
