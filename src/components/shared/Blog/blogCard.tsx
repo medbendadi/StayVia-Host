@@ -12,7 +12,7 @@ const BlogCard: FC<{ blog: Blog }> = ({ blog }) => {
                 <Image
                     src={coverImage!}
                     alt="image"
-                    className="transition group-hover:scale-110"
+                    className="transition group-hover:scale-110 group-active:scale-110"
                     width={190}
                     height={163}
                     style={{ width: "100%", height: "100%" }}
@@ -21,7 +21,7 @@ const BlogCard: FC<{ blog: Blog }> = ({ blog }) => {
             </div>
             <div className="flex justify-between items-center">
                 <div>
-                    <h3 className="mt-2 text-xl font-medium text-dark dark:text-white group-hover:text-primary">
+                    <h3 className="mt-2 text-xl font-medium text-dark dark:text-white group-hover:text-primary group-active:text-primary">
                         {title}
                     </h3>
                     <span className="text-base font-medium dark:text-white/50 text-dark/50 leading-loose">

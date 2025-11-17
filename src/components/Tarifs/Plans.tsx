@@ -20,9 +20,9 @@ const Plan: React.FC<PlanProps> = ({ item }) => {
         relative rounded-2xl border transition-all duration-300 group
         ${type == 'Pro'
           ? // ✅ Middle (highlighted) plan
-            " md:scale-110 bg-black/90 text-white border-black/10 shadow-[0_0_10px_rgba(0,0,0,0.5)] hover:-translate-y-1 hover:shadow-3xl bg-gradient-to-b from-[rgba(255,255,255,0.1)] via-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.25)]"
+            " md:scale-110 bg-black/90 text-white border-black/10 shadow-[0_0_10px_rgba(0,0,0,0.5)] hover:-translate-y-1 hover:shadow-3xl active:-translate-y-1 active:shadow-3xl bg-gradient-to-b from-[rgba(255,255,255,0.1)] via-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.25)]"
           : // ✅ Other plans
-            "bg-white text-black border-black/10 hover:-translate-y-1 hover:shadow-xl"
+            "bg-white text-black border-black/10 hover:-translate-y-1 hover:shadow-xl active:-translate-y-1 active:shadow-xl"
         }
       `}
     >

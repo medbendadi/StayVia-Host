@@ -82,7 +82,7 @@ const Properties: React.FC = () => {
           ))}
         </div>
         
-      <button className="py-4 px-16 m-auto cursor-pointer bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark duration-300">
+      <button className="py-4 px-16 m-auto cursor-pointer bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark active:bg-dark duration-300">
           Découvrez
       </button>
       </div>

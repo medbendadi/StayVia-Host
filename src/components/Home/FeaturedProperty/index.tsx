@@ -178,7 +178,7 @@ Situé au cœur de Casablanca, dans le quartier Palmier–Maarif, à proximité 
               </div>
             </div>
             <div className="flex mx-auto">
-              <Link href="https://www.airbnb.fr/rooms/1302830074296234152" target="_blank" className="py-4 px-[6rem] bg-primary hover:bg-dark duration-300 rounded-full text-white">
+              <Link href="https://www.airbnb.fr/rooms/1302830074296234152" target="_blank" className="py-4 px-[6rem] bg-primary hover:bg-dark active:bg-dark duration-300 rounded-full text-white">
                 Réserver
               </Link>
               <div>

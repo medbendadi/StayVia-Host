@@ -88,9 +88,9 @@ const Header: React.FC = () => {
             <div className={`hidden md:block`}>
               <Link href='#' className={`text-base text-inherit flex items-center gap-2 border-r pr-6 ${isHomepage
                 ? sticky
-                  ? 'text-dark dark:text-white hover:text-primary border-dark dark:border-white'
-                  : 'text-white hover:text-primary'
-                : 'text-dark hover:text-primary'
+                  ? 'text-dark dark:text-white hover:text-primary active:text-primary border-dark dark:border-white'
+                  : 'text-white hover:text-primary active:text-primary'
+                : 'text-dark hover:text-primary active:text-primary'
                 }`}
               >
                 <Icon icon={'ph:phone-bold'} width={24} height={24} />
@@ -102,9 +102,9 @@ const Header: React.FC = () => {
                 onClick={() => setNavbarOpen(!navbarOpen)}
                 className={`flex items-center gap-3 p-2 sm:px-5 sm:py-3 rounded-full font-semibold hover:cursor-pointer border ${isHomepage
                   ? sticky
-                    ? 'text-white bg-dark dark:bg-white dark:text-dark dark:hover:text-white dark:hover:bg-dark hover:text-dark hover:bg-white border-dark dark:border-white'
-                    : 'text-dark bg-white dark:text-dark hover:bg-transparent hover:text-white border-white'
-                  : 'bg-dark text-white hover:bg-transparent hover:text-dark dark:bg-white dark:text-dark dark:hover:bg-transparent dark:hover:text-white duration-300'
+                    ? 'text-white bg-dark dark:bg-white dark:text-dark dark:hover:text-white dark:hover:bg-dark hover:text-dark hover:bg-white dark:active:text-white dark:active:bg-dark active:text-dark active:bg-white border-dark dark:border-white'
+                    : 'text-dark bg-white dark:text-dark hover:bg-transparent active:bg-transparent hover:text-white active:text-white border-white'
+                  : 'bg-dark text-white hover:bg-transparent hover:text-dark active:bg-transparent active:text-dark dark:bg-white dark:text-dark dark:hover:bg-transparent dark:hover:text-white dark:active:bg-transparent dark:active:text-white duration-300'
                   }`}
                 aria-label='Toggle mobile menu'>
                 <span>
@@ -163,10 +163,10 @@ const Header: React.FC = () => {
             <p className='text-base sm:text-xm font-normal text-white/40'>
               Contact
             </p>
-            <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary'>
+            <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary active:text-primary'>
               hello@homely.com
             </Link>
-            <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary'>
+            <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary active:text-primary'>
               +1-212-456-7890{' '}
             </Link>
           </div>

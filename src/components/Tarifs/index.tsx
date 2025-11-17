@@ -79,7 +79,7 @@ const Tarifs: React.FC = () => {
         </div>
 
         {/* Custom Offer - Horizontal Layout */}
-        <div className="rounded-2xl border px-6 py-8 flex flex-col md:flex-row items-start gap-6 bg-black/90 text-white border-black/10 shadow-[0_0_10px_rgba(0,0,0,0.5)] duration-300 hover:shadow-3xl bg-gradient-to-b from-[rgba(255,255,255,0.1)] via-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.25)]">
+        <div className="rounded-2xl border px-6 py-8 flex flex-col md:flex-row items-start gap-6 bg-black/90 text-white border-black/10 shadow-[0_0_10px_rgba(0,0,0,0.5)] duration-300 hover:shadow-3xl active:shadow-3xl bg-gradient-to-b from-[rgba(255,255,255,0.1)] via-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.25)]">
           {/* Left side: Title + Subtitle + Price */}
           <div className="md:w-1/3">
             <h2 className="font-medium text-3xl mb-4">{customOffer.title}</h2>
@@ -103,7 +103,7 @@ const Tarifs: React.FC = () => {
           </ul>
 
           <div className="flex justify-center md:justify-end w-full md:w-1/3">
-            <Link  href='/contactus' className="py-5 px-[6rem] bg-primary text-base leading-4 block text-white rounded-full font-semibold mt-8 hover:bg-dark duration-300">
+            <Link  href='/contactus' className="py-5 px-[6rem] bg-primary text-base leading-4 block text-white rounded-full font-semibold mt-8 hover:bg-dark active:bg-dark duration-300">
                 Contact
             </Link>
           </div>

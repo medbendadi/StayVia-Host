@@ -14,7 +14,7 @@ const SocialSignIn = () => {
       <div className="flex gap-4">
         <button
           onClick={handleGoogleSignIn}
-          className="flex w-full items-center justify-center gap-2.5 rounded-2xl border border-black/10 dark:border-white/20 p-3.5 text-dark duration-200 ease-in dark:text-white dark:hover:bg-primary/10 hover:!bg-primary/10"
+          className="flex w-full items-center justify-center gap-2.5 rounded-2xl border border-black/10 dark:border-white/20 p-3.5 text-dark duration-200 ease-in dark:text-white dark:hover:bg-primary/10 dark:active:bg-primary/10 hover:!bg-primary/10 active:!bg-primary/10"
         >
           Sign In
           <svg
@@ -57,7 +57,7 @@ const SocialSignIn = () => {
 
         <button
           onClick={handleGithubSignIn}
-          className="flex w-full items-center justify-center gap-2.5 rounded-2xl border border-black/10 dark:border-white/20 p-3.5 text-dark duration-200 ease-in dark:text-white dark:hover:bg-primary/10 hover:bg-primary/10"
+          className="flex w-full items-center justify-center gap-2.5 rounded-2xl border border-black/10 dark:border-white/20 p-3.5 text-dark duration-200 ease-in dark:text-white dark:hover:bg-primary/10 dark:active:bg-primary/10 hover:bg-primary/10 active:bg-primary/10"
         >
           Sign In
           <svg

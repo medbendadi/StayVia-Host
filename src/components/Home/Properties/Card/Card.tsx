@@ -21,7 +21,7 @@ const PropertyCard: React.FC<{ item: Property }> = ({ item }) => {
 
   return (
     <div>
-      <div className='relative rounded-2xl border border-dark/10 dark:border-white/10 group hover:shadow-3xl duration-300 dark:hover:shadow-white/20'>
+      <div className='relative rounded-2xl border border-dark/10 dark:border-white/10 group hover:shadow-3xl active:shadow-3xl duration-300 dark:hover:shadow-white/20 dark:active:shadow-white/20'>
         <div className='overflow-hidden rounded-t-2xl'>
           <Link href={url} target='_blank'>
             {image && (
@@ -30,12 +30,12 @@ const PropertyCard: React.FC<{ item: Property }> = ({ item }) => {
                 alt={name}
                 width={440}
                 height={300}
-                className='w-full rounded-t-2xl group-hover:brightness-50 group-hover:scale-125 transition duration-300 delay-75'
+                className='w-full rounded-t-2xl group-hover:brightness-50 group-active:brightness-50 group-hover:scale-125 group-active:scale-125 transition duration-300 delay-75'
                 unoptimized={true}
               />
             )}
           </Link>
-          <div className='absolute top-6 right-6 p-2 pr-4 bg-white rounded-full hidden group-hover:flex items-center'>
+          <div className='absolute top-6 right-6 p-2 pr-4 bg-white rounded-full hidden group-hover:flex group-active:flex items-center'>
             {/* <Icon
               icon={'solar:arrow-right-linear'}
               width={24}
@@ -57,7 +57,7 @@ const PropertyCard: React.FC<{ item: Property }> = ({ item }) => {
           <div className='flex flex-col mobile:flex-row gap-5 mobile:gap-0 justify-between mb-6'>
             <div>
               <Link href={url} target='_blank'>
-                <h3 className='text-xl font-medium text-black dark:text-white duration-300 group-hover:text-primary'>
+                <h3 className='text-xl font-medium text-black dark:text-white duration-300 group-hover:text-primary group-active:text-primary'>
                   {name}
                 </h3>
               </Link>

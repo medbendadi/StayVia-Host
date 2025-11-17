@@ -36,7 +36,7 @@ const Categories = () => {
             <p className="text-dark/50 dark:text-white/50 text-lg lg:max-w-full leading-[1.3] md:max-w-3/4">
               Confiez-nous la gestion complète de vos locations pour une tranquillité totale.
             </p>
-            <Link href="/tarifs" className="py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark duration-300">
+            <Link href="/tarifs" className="py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark active:bg-dark duration-300">
                Nos Tarifs
             </Link>
           </div>
@@ -53,7 +53,7 @@ const Categories = () => {
                   unoptimized={true}
                 />
               </div>
-              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 duration-500">
+              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
                 <div className="flex justify-end mt-6 mr-6">
                   {/* <div className="bg-white text-dark rounded-full w-fit p-4">
                     <Icon icon="ph:arrow-right" width={24} height={24} />
@@ -83,7 +83,7 @@ const Categories = () => {
                   unoptimized={true}
                 />
               </div>
-              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 duration-500">
+              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
                 <div className="flex justify-end mt-6 mr-6">
                   {/* <div className="bg-white text-dark rounded-full w-fit p-4">
                     <Icon icon="ph:arrow-right" width={24} height={24} />
@@ -112,7 +112,7 @@ const Categories = () => {
                   unoptimized={true}
                 />
               </div>
-              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 duration-500">
+              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
                 <div className="flex justify-end mt-6 mr-6">
                   {/* <div className="bg-white text-dark rounded-full w-fit p-4">
                     <Icon icon="ph:arrow-right" width={24} height={24} />
@@ -143,7 +143,7 @@ const Categories = () => {
                   unoptimized={true}
                 />
               </div>
-              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 duration-500">
+              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
                 <div className="flex justify-end mt-6 mr-6">
                   {/* <div className="bg-white text-dark rounded-full w-fit p-4">
                     <Icon icon="ph:arrow-right" width={24} height={24} />

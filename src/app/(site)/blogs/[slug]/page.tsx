@@ -84,7 +84,7 @@ export default async function Post({ params }: any) {
                 <div className="container max-w-8xl mx-auto md:px-0 px-4">
                     <div>
                         <div>
-                            <Link href="/blogs" className="flex items-center gap-3 text-white bg-primary py-3 px-4 rounded-full w-fit hover:bg-dark duration-300">
+                            <Link href="/blogs" className="flex items-center gap-3 text-white bg-primary py-3 px-4 rounded-full w-fit hover:bg-dark active:bg-dark duration-300">
                                 <Icon
                                     icon={'ph:arrow-left'}
                                     width={20}

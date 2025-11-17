@@ -92,7 +92,7 @@ const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
         <div className="mb-9">
           <button
             type="submit"
-            className="flex w-full cursor-pointer items-center justify-center rounded-md bg-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:!bg-darkprimary dark:hover:!bg-darkprimary"
+            className="flex w-full cursor-pointer items-center justify-center rounded-md bg-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:!bg-darkprimary active:!bg-darkprimary dark:hover:!bg-darkprimary dark:active:!bg-darkprimary"
           >
             Sign Up
           </button>
@@ -101,11 +101,11 @@ const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
 
       <p className="text-center mb-4 text-base">
         By creating an account you are agree with our{" "}
-        <Link href="/" className="text-primary hover:underline">
+        <Link href="/" className="text-primary hover:underline active:underline">
           Privacy
         </Link>{" "}
         and{" "}
-        <Link href="/" className="text-primary hover:underline">
+        <Link href="/" className="text-primary hover:underline active:underline">
           Policy
         </Link>
       </p>
@@ -114,7 +114,7 @@ const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
         Already have an account?
         <Link
           href="/"
-          className="pl-2 text-primary hover:bg-darkprimary hover:underline"
+          className="pl-2 text-primary hover:bg-darkprimary active:bg-darkprimary hover:underline active:underline"
         >
           Sign In
         </Link>

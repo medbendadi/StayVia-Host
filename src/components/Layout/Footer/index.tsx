@@ -24,13 +24,13 @@ const Footer = () => {
           </div> */}
           <div className="flex items-center gap-6">
             <Link href="#">
-              <Icon icon="ph:x-logo-bold" width={24} height={24} className="text-white hover:text-primary duration-300" />
+              <Icon icon="ph:x-logo-bold" width={24} height={24} className="text-white hover:text-primary active:text-primary duration-300" />
             </Link>
             <Link href="#">
-              <Icon icon="ph:facebook-logo-bold" width={24} height={24} className="text-white hover:text-primary duration-300" />
+              <Icon icon="ph:facebook-logo-bold" width={24} height={24} className="text-white hover:text-primary active:text-primary duration-300" />
             </Link>
             <Link href="#">
-              <Icon icon="ph:instagram-logo-bold" width={24} height={24} className="text-white hover:text-primary duration-300" />
+              <Icon icon="ph:instagram-logo-bold" width={24} height={24} className="text-white hover:text-primary active:text-primary duration-300" />
             </Link>
           </div>
         </div>
@@ -40,7 +40,7 @@ const Footer = () => {
               <h2 className="text-white leading-[1.2] text-40 font-medium mb-6 lg:max-w-3/4">
               Rejoignez-nous pour optimiser vos revenus locatifs.
               </h2>
-              <Link href="/contactus" className="bg-primary text-base font-semibold py-4 px-8 rounded-full text-white hover:bg-white hover:text-dark duration-300 hover:cursor-pointer">
+              <Link href="/contactus" className="bg-primary text-base font-semibold py-4 px-8 rounded-full text-white hover:bg-white active:bg-white hover:text-dark active:text-dark duration-300 hover:cursor-pointer">
                 Rejoignez
               </Link>
             </div>
@@ -48,7 +48,7 @@ const Footer = () => {
               <div className="flex flex-col gap-4 w-fit">
                 {FooterLinks.slice(0, 4).map((item, index) => (
                   <div key={index}>
-                    <Link href={item.href} className="text-white/40 text-xm hover:text-white">
+                    <Link href={item.href} className="text-white/40 text-xm hover:text-white active:text-white">
                       {item.label}
                     </Link>
                   </div>
@@ -59,7 +59,7 @@ const Footer = () => {
               <div className="flex flex-col gap-4 w-fit">
                 {FooterLinks.slice(4, 8).map((item, index) => (
                   <div key={index}>
-                    <Link href={item.href} className="text-white/40 text-xm hover:text-white">
+                    <Link href={item.href} className="text-white/40 text-xm hover:text-white active:text-white">
                       {item.label}
                     </Link>
                   </div>
@@ -73,10 +73,10 @@ const Footer = () => {
             ©2025 StayVia | Tous droits réservés
           </p>
           <div className="flex gap-8 items-center">
-            <Link href="#" className="text-white/40 hover:text-primary text-sm">
+            <Link href="#" className="text-white/40 hover:text-primary active:text-primary text-sm">
               Terms of service
             </Link>
-            <Link href="#" className="text-white/40 hover:text-primary text-sm">
+            <Link href="#" className="text-white/40 hover:text-primary active:text-primary text-sm">
               Privacy policy
             </Link>
           </div>

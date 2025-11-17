@@ -83,7 +83,7 @@ const Signin = ({ signInOpen }: { signInOpen?: any }) => {
         <div className="mb-9">
           <button
             type="submit"
-            className="flex w-full cursor-pointer items-center justify-center rounded-2xl border border-primary bg-primary hover:bg-transparent hover:text-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out "
+            className="flex w-full cursor-pointer items-center justify-center rounded-2xl border border-primary bg-primary hover:bg-transparent active:bg-transparent hover:text-primary active:text-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out "
           >
             Sign In
           </button>
@@ -94,14 +94,14 @@ const Signin = ({ signInOpen }: { signInOpen?: any }) => {
       <div className="text-center">
         <Link
           href="/"
-          className="mb-2 text-base text-dark hover:text-primary dark:text-white dark:hover:text-primary"
+          className="mb-2 text-base text-dark hover:text-primary dark:text-white dark:hover:text-primary dark:active:text-primary active:text-primary"
         >
           Forget Password?
         </Link>
       </div>
       <p className="text-body-secondary text-base text-center">
         Not a member yet?{" "}
-        <Link href="/" className="text-primary hover:underline">
+        <Link href="/" className="text-primary hover:underline active:underline">
           Sign Up
         </Link>
       </p>

@@ -21,14 +21,14 @@ const Hero: React.FC = () => {
         <div className='container max-w-8xl mx-auto px-5 2xl:px-0 pt-32 md:pt-60 md:pb-68 relative z-10'>
           <div className='relative text-white text-center md:text-start z-10'>
             <p className='text-inherit text-sm font-medium'>Laissez-nous gérer l’ensemble de votre location pour vous garantir confort, rentabilité et sérénité.</p>
-            <h1 className='text-inherit text-2xl sm:text-6xl font-semibold -tracking-wider md:max-w-45p mt-4 mb-6'>
-              Gagnez du Temps & Maximisez Vos Profits
+            <h1 className='text-inherit text-2xl leading-16 sm:text-6xl font-semibold -tracking-wider md:max-w-45p mt-4 mb-6'>
+              Gagnez du Temps & <br />Maximisez Vos Profits
             </h1>
             <div className='flex flex-col md:flex-row justify-center md:justify-start gap-4'>
-              <Link href="/contactus" className='px-8 py-4 border border-white dark:border-dark bg-white dark:bg-dark text-dark dark:text-white duration-300 dark:hover:text-white hover:bg-transparent hover:text-white text-base font-semibold rounded-full hover:cursor-pointer'>                
+              <Link href="/contactus" className='px-8 py-4 border border-white dark:border-dark bg-white dark:bg-dark text-dark dark:text-white duration-300 dark:hover:text-white hover:bg-transparent hover:text-white dark:active:text-white active:bg-transparent active:text-white text-base font-semibold rounded-full hover:cursor-pointer active:cursor-pointer'>                
                 Demander un audit gratuit 
               </Link>
-              <button className='px-8 py-4 border border-white dark:border-dark bg-transparent text-white  hover:bg-white dark:hover:bg-dark dark:hover:text-white hover:text-dark duration-300 text-base font-semibold rounded-full hover:cursor-pointer'>
+              <button className='px-8 py-4 border border-white dark:border-dark bg-transparent text-white  hover:bg-white dark:hover:bg-dark dark:hover:text-white hover:text-dark active:bg-white dark:active:bg-dark dark:active:text-white active:text-dark duration-300 text-base font-semibold rounded-full hover:cursor-pointer active:cursor-pointer'>
                 En savoir plus
               </button>
             </div>

@@ -58,7 +58,7 @@ export default function ContactUs() {
               <Link href={'/'} className='w-fit'>
                 <div className='flex items-center gap-4 group w-fit'>
                   <Icon icon={'ph:phone'} width={32} height={32} />
-                  <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary'>
+                  <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary group-active:text-primary'>
                     +1 0239 0310 1122
                   </p>
                 </div>
@@ -66,7 +66,7 @@ export default function ContactUs() {
               <Link href={'/'} className='w-fit'>
                 <div className='flex items-center gap-4 group w-fit'>
                   <Icon icon={'ph:envelope-simple'} width={32} height={32} />
-                  <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary'>
+                  <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary group-active:text-primary'>
                     support@gleamer.com
                   </p>
                 </div>
@@ -119,7 +119,7 @@ export default function ContactUs() {
                   placeholder='Write here your message'
                   required
                   className='px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-2xl outline-primary focus:outline'></textarea>
-                <button className='px-8 py-4 rounded-full bg-primary text-white text-base font-semibold w-full mobile:w-fit hover:cursor-pointer hover:bg-dark duration-300'>
+                <button className='px-8 py-4 rounded-full bg-primary text-white text-base font-semibold w-full mobile:w-fit hover:cursor-pointer active:cursor-pointer hover:bg-dark active:bg-dark duration-300'>
                   Send message
                 </button>
               </div>
