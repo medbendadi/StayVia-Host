@@ -26,10 +26,10 @@ const Footer = () => {
             <Link href="#">
               <Icon icon="ph:x-logo-bold" width={24} height={24} className="text-white hover:text-primary active:text-primary duration-300" />
             </Link>
-            <Link href="#">
+            <Link target="_blank" href="https://www.facebook.com/share/1Zeh9wayj6/">
               <Icon icon="ph:facebook-logo-bold" width={24} height={24} className="text-white hover:text-primary active:text-primary duration-300" />
             </Link>
-            <Link href="#">
+            <Link target="_blank" href="https://www.instagram.com/stay.viahost?igsh=MWFwdHgxeXRqc2Y3MA==">
               <Icon icon="ph:instagram-logo-bold" width={24} height={24} className="text-white hover:text-primary active:text-primary duration-300" />
             </Link>
           </div>

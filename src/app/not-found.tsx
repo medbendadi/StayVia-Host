@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { Icon } from "@iconify/react/dist/iconify.js"
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "404 Page | Property ",
@@ -9,15 +10,6 @@ export const metadata: Metadata = {
 const ErrorPage = () => {
   return (
     <>
-      <section className="flex justify-center pb-0!">
-        <Image
-          src="/images/404.png"
-          alt="404"
-          width={490}
-          height={450}
-          unoptimized={true}
-        />
-      </section>
       <section className="text-center bg-cover relative overflow-x-hidden" >
         <div className='flex gap-2.5 items-center justify-center'>
           <span>
@@ -33,11 +25,15 @@ const ErrorPage = () => {
           </p>
         </div>
         <h2 className="text-dark text-52 relative font-bold dark:text-white " >
-          Lost? Let’s Help You Find Home.
+        Perdu(e) ? Laissez-nous vous aider à trouver un logement.
         </h2>
         <p className="text-lg text-dark/50 dark:text-white/50 font-normal w-full mx-auto">
-          Looks like you’ve hit a dead end — but don’t worry, we’ll help you get back on track
+        Il semblerait que vous soyez dans une impasse, mais ne vous inquiétez pas, nous allons vous aider à reprendre le bon chemin.
         </p>
+
+        <Link href={'/'} className="py-4 px-16 m-auto cursor-pointer bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark active:bg-dark duration-300">
+                Cliquer ici !
+            </Link>
       </section>
     </>
   );

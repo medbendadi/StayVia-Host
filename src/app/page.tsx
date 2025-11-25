@@ -8,6 +8,8 @@ import GetInTouch from '@/components/Home/GetInTouch'
 import FAQ from '@/components/Home/FAQs'
 import Owners from '@/components/Home/Owners'
 import Roadmap from '@/components/Home/Raodmap'
+import RoomBooking from '@/components/RoomBooking/intex'
+import Example from '@/components/ui/dataPicker'
 
 export default function Home() {
   return (
@@ -17,6 +19,7 @@ export default function Home() {
       <Properties />
       <Owners />
       <Roadmap />
+      <RoomBooking/>
       <FeaturedProperty />
       <Testimonial />
       {/* <BlogSmall /> */}

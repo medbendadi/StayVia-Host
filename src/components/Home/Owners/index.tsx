@@ -63,7 +63,7 @@ const Owners: React.FC = () => {
                         style={{ width: "80px", height: "80px" }}
                         unoptimized={true}
                     />
-                    <h2 className="text-white text-xl mt-5">Loubna</h2>
+                    <h2 className="text-white text-xl mt-5">Naoual Aftati</h2>
                 </div>
             </div>
           </div>
@@ -79,7 +79,7 @@ const Owners: React.FC = () => {
                 Qui sommes <br/> nous ?
             </h2>
             <p className="text-dark/50 dark:text-white/50 pr-20">
-            Fondée par Aya El Ahmadi & Dalila Hajbani, STAY VIA accompagne les propriétaires dans la gestion complète de leurs locations de courte durée sur Airbnb, Booking.com et autres plateformes.
+            Fondée par Naoual Aftati & Dalila Hajbani, STAY VIA accompagne les propriétaires dans la gestion complète de leurs locations de courte durée sur Airbnb, Booking.com et autres plateformes.
             Notre mission : transformer chaque logement en adresse d’exception et chaque séjour en expérience mémorable.
             </p>
             <div className="my-8">
@@ -117,7 +117,7 @@ const Owners: React.FC = () => {
                     Nos fondatrices
                   </AccordionTrigger>
                   <AccordionContent>
-                    <span className="text-primary">Aya El Ahmadi:</span> – passionnée par l’hospitalité et la gestion locative. <br />
+                    <span className="text-primary">Naoual Aftati:</span> – passionnée par l’hospitalité et la gestion locative. <br />
                     <span className="text-primary">Dalila Hajbani:</span> –experte en optimisation de locations et service client. <br />
                     <span className="text-primary">Vision commune:</span> offrir une conciergerie de luxe où efficacité rime avec élégance. <br />
 

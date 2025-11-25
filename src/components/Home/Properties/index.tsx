@@ -1,9 +1,12 @@
+"use client";
+
 import { Icon } from '@iconify/react'
 import PropertyCard from './Card/Card'
 import { propertyHomes } from '@/app/api/propertyhomes'
+import { useState } from 'react'
 
 
-const properties = [
+const fillterdproperties = [
   {
     name: 'Studio moderne et calme',
     url: 'https://www.airbnb.fr/rooms/1543443156241086428',
@@ -50,6 +53,8 @@ const properties = [
   },
 ]
 const Properties: React.FC = () => {
+  const [expanded, setExpanded] = useState(false)
+  const [properties, setProperties] = useState(fillterdproperties)
   return (
     <section id='Properties'>
       <div className='container max-w-8xl mx-auto px-5 2xl:px-0'>
@@ -75,16 +80,21 @@ const Properties: React.FC = () => {
           </p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
-          {properties.slice(0, 3).map((item, index) => (
+          {!expanded ? properties.slice(0, 3).map((item, index) => (
+            <div key={index} className=''>
+              <PropertyCard item={item} />
+            </div>
+          )) : properties.map((item, index) => (
             <div key={index} className=''>
               <PropertyCard item={item} />
             </div>
           ))}
         </div>
         
-      <button className="py-4 px-16 m-auto cursor-pointer bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark active:bg-dark duration-300">
-          Découvrez
-      </button>
+
+            <button onClick={() => setExpanded(!expanded)} className="py-4 px-16 m-auto cursor-pointer bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark active:bg-dark duration-300">
+                {!expanded ? "Découvrez" : "Afficher moins"}
+            </button>
       </div>
       
     </section>
