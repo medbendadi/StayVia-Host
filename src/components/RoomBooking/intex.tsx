@@ -1,123 +1,80 @@
 // components/BookingForm.tsx
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { format, differenceInCalendarDays } from "date-fns";
 import { CalendarIcon, User, Search, ChevronDown } from "lucide-react";
 import type { DateRange } from "react-day-picker";
 import { Icon } from "@iconify/react";
 
-
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
-import Example from "../ui/dataPicker";
 import Image from "next/image";
 import PropertyCard from "../Home/Properties/Card/Card";
 
+import sanityClient from "@sanity/client";
+import imageUrlBuilder from "@sanity/image-url";
 
 const uploadedImage = "sandbox:/mnt/data/c554d17d-32e4-4515-88b3-af9bb6f17621.png";
+
+/** UI card shape */
 interface CardProp {
-    name: string,
-      url: string,
-      location: string,
-      price: string,
-      rating: string,
-      beds: number,
-      baths: number,
-      area: number,
-      image: string
+  name: string; // mapped from title or name
+  url: string; // mapped from reserverUrl or url
+  location: string;
+  price: string;
+  rating: string;
+  beds: number;
+  baths: number;
+  area: number;
+  image: string; // absolute URL or empty string
+  isExclusive?: boolean;
 }
-const properties = [
-    {
-      name: 'Studio moderne et calme',
-      url: 'https://www.airbnb.fr/rooms/1543443156241086428',
-      location: 'Casablanca, Maroc',
-      price: 'Soon',
-      rating: '5.0',
-      beds: 1,
-      baths: 1,
-      area: 120,
-      image: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1543443156241086428/original/6eb68a28-bd68-4904-b601-15c3662fb688.jpeg?im_w=1200'
-    },
-    {
-      name: 'Studio moderne et calme',
-      url: 'https://www.airbnb.fr/rooms/1543443156241086428',
-      location: 'Casablanca, Maroc',
-      price: 'Soon',
-      rating: '5.0',
-      beds: 1,
-      baths: 1,
-      area: 130,
-      image: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1543443156241086428/original/6eb68a28-bd68-4904-b601-15c3662fb688.jpeg?im_w=1200'
-    },
-    {
-      name: 'Studio moderne et calme',
-      url: 'https://www.airbnb.fr/rooms/1543443156241086428',
-      location: 'Casablanca, Maroc',
-      price: 'Soon',
-      rating: '5.0',
-      beds: 1,
-      baths: 1,
-      area: 150,
-      image: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1543443156241086428/original/6eb68a28-bd68-4904-b601-15c3662fb688.jpeg?im_w=1200'
-    },
-    {
-      name: 'Studio moderne et calme',
-      url: 'https://www.airbnb.fr/rooms/1543443156241086428',
-      location: 'Casablanca, Maroc',
-      price: 'Soon',
-      rating: '5.0',
-      beds: 3,
-      baths: 1,
-      area: 190,
-      image: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1543443156241086428/original/6eb68a28-bd68-4904-b601-15c3662fb688.jpeg?im_w=1200'
-    },
-    {
-        name: 'Studio moderne et calme',
-        url: 'https://www.airbnb.fr/rooms/1543443156241086428',
-        location: 'Casablanca, Maroc',
-        price: 'Soon',
-        rating: '5.0',
-        beds: 3,
-        baths: 1,
-        area: 120,
-        image: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1543443156241086428/original/6eb68a28-bd68-4904-b601-15c3662fb688.jpeg?im_w=1200'
-      },
-      {
-        name: 'Studio moderne et calme',
-        url: 'https://www.airbnb.fr/rooms/1543443156241086428',
-        location: 'Casablanca, Maroc',
-        price: 'Soon',
-        rating: '5.0',
-        beds: 2,
-        baths: 1,
-        area: 130,
-        image: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1543443156241086428/original/6eb68a28-bd68-4904-b601-15c3662fb688.jpeg?im_w=1200'
-      },
-      {
-        name: 'Studio moderne et calme',
-        url: 'https://www.airbnb.fr/rooms/1543443156241086428',
-        location: 'Casablanca, Maroc',
-        price: 'Soon',
-        rating: '5.0',
-        beds: 2,
-        baths: 1,
-        area: 150,
-        image: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1543443156241086428/original/6eb68a28-bd68-4904-b601-15c3662fb688.jpeg?im_w=1200'
-      },
-      {
-        name: 'Studio moderne et calme',
-        url: 'https://www.airbnb.fr/rooms/1543443156241086428',
-        location: 'Casablanca, Maroc',
-        price: 'Soon',
-        rating: '5.0',
-        beds: 2,
-        baths: 1,
-        area: 190,
-        image: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1543443156241086428/original/6eb68a28-bd68-4904-b601-15c3662fb688.jpeg?im_w=1200'
-      },
-  ]
+
+
+/* ---------------------------
+   Sanity client (client-side, uses NEXT_PUBLIC_ env vars)
+   --------------------------- */
+let client: ReturnType<typeof sanityClient> | null = null;
+let builder: ReturnType<typeof imageUrlBuilder> | null = null;
+
+if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID && process.env.NEXT_PUBLIC_SANITY_DATASET) {
+  client = sanityClient({
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    useCdn: true,
+    apiVersion: "2025-11-26",
+  });
+  builder = imageUrlBuilder(client);
+}
+
+/** Build usable URL from several possible Sanity image shapes or string URL */
+function urlFor(source: any) {
+  if (!source) return "";
+  if (!builder) {
+    if (typeof source === "string") return source;
+    return "";
+  }
+  if (typeof source === "string") return source;
+  try {
+    return builder.image(source).width(1200).url();
+  } catch (err) {
+    const ref = source?.asset?._ref ?? source?._id;
+    if (typeof ref === "string") {
+      try {
+        return builder.image({ asset: { _ref: ref } }).width(1200).url();
+      } catch (err2) {
+        console.warn("urlFor: failed to build image from ref", ref, err2);
+      }
+    }
+  }
+  return "";
+}
+
+/* ---------------------------
+   DateRangePicker (unchanged)
+   --------------------------- */
 function DateRangePicker({
   value,
   onChange,
@@ -168,13 +125,7 @@ function DateRangePicker({
       >
         <div className="px-6 pt-6 pb-0">
           <div className="rounded-lg overflow-hidden text-black dark:text-white">
-            <Calendar
-              mode="range"
-              numberOfMonths={2}
-              selected={value}
-              onSelect={(range) => onChange(range)}
-              disabled={{ before: today }}
-            />
+            <Calendar mode="range" numberOfMonths={2} selected={value} onSelect={(range) => onChange(range)} disabled={{ before: today }} />
           </div>
         </div>
 
@@ -197,6 +148,9 @@ function DateRangePicker({
   );
 }
 
+/* ---------------------------
+   Main BookingForm component
+   --------------------------- */
 export default function BookingForm({
   onSearch,
 }: {
@@ -206,12 +160,99 @@ export default function BookingForm({
   const [adults, setAdults] = useState<number>(1);
   const [children, setChildren] = useState<number>(0);
   const [guestsOpen, setGuestsOpen] = useState<boolean>(false);
-  const [fillterdProperties, setFillterdProperties] = useState<CardProp[]>([])
+  const [allProperties, setAllProperties] = useState<CardProp[]>([]);
+  const [nonExclusiveProperties, setNonExclusiveProperties] = useState<CardProp[]>([]);
+  const [fillterdProperties, setFillterdProperties] = useState<CardProp[]>([]);
   const totalGuests = adults + children;
+
+  // fetch properties from Sanity on mount (client-side)
+  useEffect(() => {
+    let mounted = true;
+    async function load() {
+
+      try {
+        // Fetch all documents — request both legacy and new fields
+        const query = `*[_type == "property"] | order(_createdAt desc){
+          _id,
+          title,
+          name,            // legacy
+          url,             // legacy
+          reserverUrl,     // new field (button)
+          location,
+          price,
+          rating,
+          bedrooms,
+          bathrooms,
+          beds,            // legacy
+          baths,           // legacy
+          area,
+          images,          // array (new)
+          mainImage,       // legacy
+          isExclusive
+        }`;
+
+        const res = await client.fetch(query);
+        console.log("Sanity raw (sample):", res?.[0]);
+
+        const mapped: CardProp[] = (res || []).map((doc: any) => {
+          // prefer new schema names then fallback to legacy
+          const name = doc.title ?? doc.name ?? "Untitled";
+          const url = doc.reserverUrl ?? doc.url ?? "#";
+          const location = doc.location ?? "";
+          const price = doc.price ?? "—";
+          const rating = doc.rating ?? "";
+
+          // bedrooms / bathrooms mapping
+          const beds = Number(doc.bedrooms ?? doc.beds ?? 1);
+          const baths = Number(doc.bathrooms ?? doc.baths ?? 1);
+          const area = Number(doc.area ?? 0);
+
+          // choose image: images[0] (new) -> mainImage (legacy) -> empty
+          const rawImage =
+            (Array.isArray(doc.images) && doc.images.length > 0 && doc.images[0]) ||
+            doc.mainImage ||
+            doc.image ||
+            null;
+          const imageUrl = rawImage ? urlFor(rawImage) : "";
+
+          return {
+            name,
+            url,
+            location,
+            price,
+            rating,
+            beds,
+            baths,
+            area,
+            image: imageUrl || "",
+            isExclusive: !!doc.isExclusive,
+          };
+        });
+
+        // derive non-exclusive
+        const nonExclusive = mapped.filter((p) => !p.isExclusive);
+
+        if (mounted) {
+          setAllProperties(mapped.length ? mapped : []);
+          setNonExclusiveProperties(nonExclusive.length ? nonExclusive : []);
+        }
+      } catch (err) {
+        console.error("Sanity fetch error:", err);
+        if (mounted) {
+          setAllProperties([]);
+          setNonExclusiveProperties([]);
+        }
+      }
+    }
+    load();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    
+
     const payload = {
       from: dateRange?.from ? format(dateRange.from, "yyyy-MM-dd") : undefined,
       to: dateRange?.to ? format(dateRange.to, "yyyy-MM-dd") : undefined,
@@ -219,8 +260,17 @@ export default function BookingForm({
       children,
     };
 
-    const X = properties.filter((e) => e.beds == payload.adults + payload.children)
-  setFillterdProperties(X)  
+    const total = payload.adults + payload.children;
+
+    // source: only non-exclusive properties
+    const source = nonExclusiveProperties && nonExclusiveProperties.length > 0 ? nonExclusiveProperties : allProperties;
+
+    const X = source.filter((p) => {
+      const beds = Number(p.beds || 0);
+      return beds >= total;
+    });
+
+    setFillterdProperties(X);
 
     if (onSearch) onSearch(payload);
     else console.log("Booking search payload:", payload);
@@ -228,15 +278,10 @@ export default function BookingForm({
 
   return (
     <section className="w-full bg-white dark:bg-black relative overflow-hidden">
-        <div className="absolute right-0 z-0 pointer-events-none">
-        <Image
-          src="/images/testimonial/Vector.png"
-          alt="victor"
-          width={700}
-          height={1039}
-          unoptimized={true}
-        />
+      <div className="absolute right-0 z-0 pointer-events-none">
+        <Image src="/images/testimonial/Vector.png" alt="victor" width={700} height={1039} unoptimized />
       </div>
+
       <div
         className="h-44 md:h-56 bg-cover bg-center rounded-b-xl"
         style={{
@@ -247,21 +292,16 @@ export default function BookingForm({
       />
 
       <div className="max-w-[1200px] mx-auto -mt-10 px-4 md:px-6">
-      <p className="text-dark/75 dark:text-white/75 text-base justify-center font-semibold flex gap-2">
-              <Icon
-                icon="ph:house-simple-fill"
-                className="text-2xl text-primary "
-              />
-              Traveler
-            </p>
-            <h2 className="lg:text-52 text-40 leading-[1.2] text-center font-medium text-dark dark:text-white">
-            Prêt ?
-            </h2>
+        <p className="text-dark/75 dark:text-white/75 text-base justify-center font-semibold flex gap-2">
+          <Icon icon="ph:house-simple-fill" className="text-2xl text-primary " />
+          Traveler
+        </p>
+        <h2 className="lg:text-52 text-40 leading-[1.2] text-center font-medium text-dark dark:text-white">Prêt ?</h2>
+
         <form onSubmit={handleSubmit} className="mt-8 bg-white dark:bg-black p-5 rounded-3xl">
           <div className="bg-white dark:bg-black rounded-2xl p-4 shadow-sm border border-gray-100">
             <div className="flex flex-col md:flex-row gap-4 items-center">
               <div className="flex-1 md:flex-[0_0_45%]">
-              {/* <Example/> */}
                 <DateRangePicker value={dateRange} onChange={setDateRange} />
               </div>
 
@@ -291,23 +331,9 @@ export default function BookingForm({
                           <div className="text-xs text-muted-foreground">Ages 13+</div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <button
-                            type="button"
-                            onClick={() => setAdults((a) => Math.max(1, a - 1))}
-                            className="h-8 w-8 grid place-items-center rounded-md border"
-                            aria-label="Decrease adults"
-                          >
-                            −
-                          </button>
+                          <button type="button" onClick={() => setAdults((a) => Math.max(1, a - 1))} className="h-8 w-8 grid place-items-center rounded-md border" aria-label="Decrease adults">−</button>
                           <div className="w-6 text-center">{adults}</div>
-                          <button
-                            type="button"
-                            onClick={() => setAdults((a) => a + 1)}
-                            className="h-8 w-8 grid place-items-center rounded-md border"
-                            aria-label="Increase adults"
-                          >
-                            +
-                          </button>
+                          <button type="button" onClick={() => setAdults((a) => a + 1)} className="h-8 w-8 grid place-items-center rounded-md border" aria-label="Increase adults">+</button>
                         </div>
                       </div>
 
@@ -317,30 +343,14 @@ export default function BookingForm({
                           <div className="text-xs text-muted-foreground">Ages 2–12</div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <button
-                            type="button"
-                            onClick={() => setChildren((c) => Math.max(0, c - 1))}
-                            className="h-8 w-8 grid place-items-center rounded-md border"
-                            aria-label="Decrease children"
-                          >
-                            −
-                          </button>
+                          <button type="button" onClick={() => setChildren((c) => Math.max(0, c - 1))} className="h-8 w-8 grid place-items-center rounded-md border" aria-label="Decrease children">−</button>
                           <div className="w-6 text-center">{children}</div>
-                          <button
-                            type="button"
-                            onClick={() => setChildren((c) => c + 1)}
-                            className="h-8 w-8 grid place-items-center rounded-md border"
-                            aria-label="Increase children"
-                          >
-                            +
-                          </button>
+                          <button type="button" onClick={() => setChildren((c) => c + 1)} className="h-8 w-8 grid place-items-center rounded-md border" aria-label="Increase children">+</button>
                         </div>
                       </div>
 
                       <div className="mt-4 flex justify-end">
-                        <button type="button" onClick={() => setGuestsOpen(false)} className="px-3 py-1 rounded-md text-sm">
-                          Done
-                        </button>
+                        <button type="button" onClick={() => setGuestsOpen(false)} className="px-3 py-1 rounded-md text-sm">Done</button>
                       </div>
                     </div>
                   )}
@@ -348,12 +358,7 @@ export default function BookingForm({
               </div>
 
               <div className="md:flex-[0_0_14%] w-full md:w-auto">
-                <button
-                  type="submit"
-                //   onClick={handleSubmit}
-                  className="w-full md:w-40 h-12 rounded-2xl flex items-center cursor-pointer justify-center gap-2 px-6 py-2 text-sm font-semibold shadow hover:shadow-md"
-                  style={{ backgroundColor: "#F6C33B", color: "#0b0b0b" }}
-                >
+                <button type="submit" className="w-full md:w-40 h-12 rounded-2xl flex items-center cursor-pointer justify-center gap-2 px-6 py-2 text-sm font-semibold shadow hover:shadow-md" style={{ backgroundColor: "#F6C33B", color: "#0b0b0b" }}>
                   <Search className="h-4 w-4" />
                   <span>Search</span>
                 </button>
@@ -363,24 +368,22 @@ export default function BookingForm({
         </form>
 
         <p className="text-xs text-muted-foreground mt-4 text-center">
-        Sélectionnez vos dates d'arrivée et de départ pour consulter les disponibilités et les prix.
+          Sélectionnez vos dates d'arrivée et de départ pour consulter les disponibilités et les prix.
         </p>
 
-{
-    fillterdProperties ? (
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mt-8'>
-        {fillterdProperties.map((item, index) => (
-          <div key={index} className=''>
-            <PropertyCard item={item} />
+        {/* ---------- Filtered search results (only non-exclusive source used) ---------- */}
+        {fillterdProperties && fillterdProperties.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mt-8">
+            {fillterdProperties.map((item, index) => (
+              <div key={index} className="">
+                <PropertyCard item={item} />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-  ) : null
-}
-
+        ) : null}
       </div>
 
-      {/* calendar styling fix: start/end yellow, middle black solid background for each day in range */}
+      {/* calendar styling (kept as-is) */}
       <style jsx global>{`
         .rdp { font-family: inherit; }
         .rdp-month { padding: 10px 18px 18px 18px; }

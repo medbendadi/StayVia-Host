@@ -167,7 +167,7 @@ const Header: React.FC = () => {
               hello@homely.com
             </Link>
             <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary active:text-primary'>
-              +212604525479{' '}
+              +212 604525479{' '}
             </Link>
           </div>
         </div>
