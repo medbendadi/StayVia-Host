@@ -1,0 +1,12 @@
+"use client";
+// src/components/NextTopLoaderClient.tsx
+"use client";
+import { useEffect, useState } from "react";
+export default function NextTopLoaderClient() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+  if (!mounted) return null;
+  // import only when mounted to avoid any SSR evaluation
+  const NextTopLoader = require("nextjs-toploader").default;
+  return <NextTopLoader color="#07be8a" />;
+}
