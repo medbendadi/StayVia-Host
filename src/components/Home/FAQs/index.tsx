@@ -28,29 +28,29 @@ const FAQ: React.FC = () => {
                             FAQs
                         </p>
                         <h2 className='lg:text-52 text-40 leading-[1.2] font-medium text-dark dark:text-white'>
-                            Everything about Homely homes
+                        Tout savoir sur les logements Stayvia
                         </h2>
                         <p className='text-dark/50 dark:text-white/50 pr-20'>
-                            We know that buying, selling, or investing in real estate can be overwhelming. Here are some frequently asked questions to help guide you through the process
+                        Nous savons que réserver, gérer ou investir dans un logement peut parfois sembler complexe. Voici une sélection de questions fréquentes pour vous aider à mieux comprendre nos services et simplifier votre expérience avec StayVia Host.
                         </p>
                         <div className="my-8">
                             <Accordion type="single" defaultValue="item-1" collapsible className="w-full flex flex-col gap-6">
                                 <AccordionItem value="item-1">
-                                    <AccordionTrigger>1. Can I personalize my homely home?</AccordionTrigger>
+                                    <AccordionTrigger>1. Que se passe-t-il si je ne suis pas satisfait du service de conciergerie ?</AccordionTrigger>
                                     <AccordionContent>
-                                        Discover a diverse range of premium properties, from luxurious apartments to spacious villas, tailored to your needs.
+                                    Votre satisfaction est notre priorité. Nous ajustons nos services en fonction de vos retours et vous pouvez mettre fin au contrat à tout moment si vous estimez que nos prestations ne répondent pas à vos attentes.
                                     </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem value="item-2">
-                                    <AccordionTrigger>2. Where can I find homely homes?</AccordionTrigger>
+                                    <AccordionTrigger>2. Comment vais-je suivre les performances de mon logement ?</AccordionTrigger>
                                     <AccordionContent>
-                                        Discover a diverse range of premium properties, from luxurious apartments to spacious villas, tailored to your needs.
+                                    Chaque mois, nous vous envoyons un audit complet incluant les nuits réservées, le taux d’occupation, les revenus générés, et tout autre indicateur clé pour que vous puissiez suivre l’évolution de la gestion en toute transparence.
                                     </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem value="item-3">
-                                    <AccordionTrigger>3. What steps to buy a homely?</AccordionTrigger>
+                                    <AccordionTrigger>3. Est-ce que je vais toujours pouvoir utiliser mon logement pour moi-même ?</AccordionTrigger>
                                     <AccordionContent>
-                                        Discover a diverse range of premium properties, from luxurious apartments to spacious villas, tailored to your needs.
+                                    Oui, vous pouvez bloquer les dates de votre choix dans le calendrier de réservation. Vous conservez la possibilité de profiter de votre bien quand vous le souhaitez.
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>
