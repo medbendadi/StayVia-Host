@@ -47,18 +47,18 @@ const Header: React.FC = () => {
               <Image
                 src={'/images/header/logo.svg'}
                 alt='logo'
-                width={150}
-                height={68}
+                width={140}
+                height={58}
                 unoptimized={true}
-                className={`${isHomepage ? sticky ? "block dark:hidden" : "hidden" : sticky ? "block dark:hidden" : "block dark:hidden"}`}
+                className={`${isHomepage ? sticky ? "block dark:hidden ml-7" : "hidden" : sticky ? "block dark:hidden ml-7" : "block dark:hidden"}`}
               />
               <Image
                 src={'/images/header/dark-logo.svg'}
                 alt='logo'
-                width={150}
-                height={68}
+                width={140}
+                height={58}
                 unoptimized={true}
-                className={`${isHomepage ? sticky ? "hidden dark:block" : "block" : sticky ? "dark:block hidden" : "dark:block hidden"}`}
+                className={`${isHomepage ? sticky ? "hidden dark:block ml-7" : "block" : sticky ? "dark:block hidden ml-7" : "dark:block hidden"}`}
               />
             </Link>
           </div>
