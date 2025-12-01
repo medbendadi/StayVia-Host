@@ -45,7 +45,7 @@ const Header: React.FC = () => {
           <div>
             <Link href='/'>
               <Image
-                src={'/images/header/dark-logo.svg'}
+                src={'/images/header/logo.svg'}
                 alt='logo'
                 width={150}
                 height={68}
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
                 className={`${isHomepage ? sticky ? "block dark:hidden" : "hidden" : sticky ? "block dark:hidden" : "block dark:hidden"}`}
               />
               <Image
-                src={'/images/header/logo.svg'}
+                src={'/images/header/dark-logo.svg'}
                 alt='logo'
                 width={150}
                 height={68}
