@@ -291,19 +291,19 @@ export default function BookingForm({
   }
 
   return (
-    <section className="w-full bg-white dark:bg-black relative overflow-hidden">
+    <section className="w-full bg-white dark:bg-black relative overflow-hidden mt-10">
       <div className="absolute right-0 z-0 pointer-events-none">
         <Image src="/images/testimonial/Vector.png" alt="victor" width={700} height={1039} unoptimized />
       </div>
 
-      <div
+      {/* <div
         className="h-44 md:h-56 bg-cover bg-center rounded-b-xl"
         style={{
           backgroundImage: `url("${uploadedImage}")`,
           filter: "brightness(0.97)",
         }}
         aria-hidden
-      />
+      /> */}
 
       <div className="max-w-[1200px] mx-auto -mt-10 px-4 md:px-6">
         <p className="text-dark/75 dark:text-white/75 text-base justify-center font-semibold flex gap-2">

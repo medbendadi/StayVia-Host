@@ -6,5 +6,4 @@ export const FooterLinks: footerlinks[] = [
     { label: 'Nos Tarifs', href: '/tarifs' },
     { label: 'Propriétés', href: '/#Properties' },
     { label: 'Contact Us', href: '/contactus' },
-    { label: 'Blog', href: '/blogs' },
 ]

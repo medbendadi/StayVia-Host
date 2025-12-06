@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Categories = () => {
   return (
-    <section className="relative overflow-hidden" id="services">
+    <section className="relative overflow-hidden mt-17" style={{ paddingBlock: 0 }} id="services">
       <div className="absolute left-0 top-0">
         <Image
           src="/images/categories/Vector.svg"
@@ -33,23 +33,21 @@ const Categories = () => {
             <h2 className="lg:text-52 text-40 mt-4 mb-2 lg:max-w-full font-medium leading-[1.2] text-dark dark:text-white">
               Gestion Locative Simplifiée
             </h2>
-            <p className="text-dark/50 dark:text-white/50 text-lg lg:max-w-full leading-[1.3] md:max-w-3/4">
+            <p className="text-dark/50 dark:text-white/50 text-lg lg:max-w-full leading-[1.3] sm:max-w-3/4">
               Confiez-nous la gestion complète de vos locations pour une tranquillité totale.
             </p>
             <Link href="/tarifs" className="py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark active:bg-dark duration-300">
-               Nos Tarifs
+              Nos Tarifs
             </Link>
           </div>
           <div className="lg:col-span-6 col-span-12 my-7 lg:my-0">
             <div className="relative rounded-2xl overflow-hidden group">
-              <div >
+              <div className="w-[90%] mx-auto sm:w-auto aspect-[82/100] sm:aspect-[16/9]">
                 <Image
                   src="/images/categories/comunication.webp"
                   alt="villas"
-                  width={680}
-                  height={386}
-                  className="object-cover md:w-[680px] md:h-[386px] w-full h-[368px]"
-                  
+                  fill
+                  className="object-cover rounded-2xl"
                   unoptimized={true}
                 />
               </div>
@@ -64,7 +62,7 @@ const Categories = () => {
                     Communication 24h/7j avec les voyageurs
                   </h3>
                   <p className="text-white/80 text-base leading-6">
-                  Nous répondons à vos voyageurs à toute heure pour garantir une expérience fluide et sans stress.
+                    Nous répondons à vos voyageurs à toute heure pour garantir une expérience fluide et sans stress.
                   </p>
                 </div>
               </div>
@@ -72,17 +70,16 @@ const Categories = () => {
           </div>
           <div className="lg:col-span-6 col-span-12 mb-7 lg:mb-0">
             <div className="relative rounded-2xl overflow-hidden group">
-              <div>
+              <div className="w-[90%] mx-auto sm:w-auto aspect-[82/100] sm:aspect-[16/9]">
                 <Image
                   src="/images/categories/menagee.avif"
                   alt="villas"
-                  width={680}
-                  height={386}
-                  className="object-cover"
-                  style={{ width: '680px', height: '386px' }}
+                  fill
+                  className="object-cover rounded-2xl"
                   unoptimized={true}
                 />
               </div>
+
               <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
                 <div className="flex justify-end mt-6 mr-6">
                   {/* <div className="bg-white text-dark rounded-full w-fit p-4">
@@ -100,69 +97,61 @@ const Categories = () => {
               </div>
             </div>
           </div>
-          <div className="lg:col-span-3 md:col-span-6 col-span-12 mb-7 lg:mb-0">
-            <div className="relative rounded-2xl overflow-hidden group">
-              <div>
-                <Image
-                  src="/images/categories/keys.jpg"
-                  alt="villas"
-                  width={320}
-                  height={386}
-                  className="object-cover md:w-[320px] md:h-[386px] w-full h-[368px]"
-                  unoptimized={true}
-                />
-              </div>
-              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
-                <div className="flex justify-end mt-6 mr-6">
-                  {/* <div className="bg-white text-dark rounded-full w-fit p-4">
-                    <Icon icon="ph:arrow-right" width={24} height={24} />
-                  </div> */}
-                </div>
-                <div className="flex flex-col gap-2.5">
-                  <h3 className="text-white text-2xl">
-                    Check-in & Check-out professionnels
-                  </h3>
-                  <p className="text-white/80 text-base leading-6">
-                      Une arrivée chaleureuse et professionnelle pour offrir la meilleure première impression.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="lg:col-span-3 md:col-span-6 col-span-12  mb-7 lg:my-0">
-            <div className="relative rounded-2xl overflow-hidden group">
-              <div>
-                <Image
-                  src="/images/categories/finance.jpg"
-                  alt="office"
-                  width={320}
-                  height={386}
-                  className="object-cover"
-                  style={{ width: '320px', height: '386px' }}
-                  objectFit="cover"
-                  unoptimized={true}
-                />
-              </div>
-              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
-                <div className="flex justify-end mt-6 mr-6">
-                  {/* <div className="bg-white text-dark rounded-full w-fit p-4">
-                    <Icon icon="ph:arrow-right" width={24} height={24} />
-                  </div> */}
-                </div>
-                <div className="flex flex-col gap-2.5">
-                  <h3 className="text-white text-2xl">
-                    Optimisation des Revenus
-                  </h3>
-                  <p className="text-white/80 text-base leading-6">
-                  Maximisez vos gains grâce à une tarification dynamique et une gestion intelligente des réservations.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          <div className="lg:col-span-3 md:col-span-6 col-span-12 mb-8 lg:mb-0">
+  <div className="relative rounded-2xl overflow-hidden group">
+    <div className="w-[90%] mx-auto sm:w-auto aspect-[82/100]">
+      <Image
+        src="/images/categories/keys.jpg"
+        alt="villas"
+        fill
+        className="object-cover rounded-2xl"
+        unoptimized={true}
+      />
+    </div>
+
+    <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
+      <div className="flex justify-end mt-6 mr-6" />
+      <div className="flex flex-col gap-2.5">
+        <h3 className="text-white text-2xl">
+          Check-in & Check-out professionnels
+        </h3>
+        <p className="text-white/80 text-base leading-6">
+          Une arrivée chaleureuse et professionnelle pour offrir la meilleure première impression.
+        </p>
       </div>
-    </section>
+    </div>
+  </div>
+</div>
+
+<div className="lg:col-span-3 md:col-span-6 col-span-12 mb-8 lg:mb-0">
+  <div className="relative rounded-2xl overflow-hidden group">
+    <div className="w-[90%] mx-auto sm:w-auto aspect-[82/100]">
+      <Image
+        src="/images/categories/finance.jpg"
+        alt="office"
+        fill
+        className="object-cover rounded-2xl"
+        unoptimized={true}
+      />
+    </div>
+
+    <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
+      <div className="flex justify-end mt-6 mr-6" />
+      <div className="flex flex-col gap-2.5">
+        <h3 className="text-white text-2xl">
+          Optimisation des Revenus
+        </h3>
+        <p className="text-white/80 text-base leading-6">
+          Maximisez vos gains grâce à une tarification dynamique et une gestion intelligente des réservations.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+    </section >
   );
 };
 

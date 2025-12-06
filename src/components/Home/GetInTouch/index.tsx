@@ -27,7 +27,7 @@ const GetInTouch: React.FC = () => {
                     </div>
                 </div>
                 <div className="w-full py-5 bg-primary rounded-b-2xl overflow-hidden">
-                    <div className='md:w-2/4 md:my-auto md:overflow-hidden'>
+                    <div className='md:w-full w-2/4 md:my-auto md:overflow-hidden'>
                         <div className="flex items-center gap-40 animate-slide">
                             <p className='text-white whitespace-nowrap relative after:absolute after:w-20 after:h-px after:bg-white after:top-3 after:-right-32'>
                                 Maximizer vos revenus

@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import sanityClient from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
-// ---------- TYPES ----------
 interface CardProp {
   name: string;
   url: string;
@@ -21,7 +20,6 @@ interface CardProp {
   isExclusive?: boolean;
 }
 
-// ---------- FALLBACK ----------
 const fallbackProperties: CardProp[] = [
   {
     name: "Studio moderne et calme",
@@ -37,7 +35,6 @@ const fallbackProperties: CardProp[] = [
   },
 ];
 
-// ---------- SANITY CLIENT ----------
 const client =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID &&
   process.env.NEXT_PUBLIC_SANITY_DATASET
@@ -66,7 +63,6 @@ function urlFor(source: any) {
   }
 }
 
-// ---------- COMPONENT ----------
 const Properties: React.FC = () => {
   const [expanded, setExpanded] = useState(false);
   const [properties, setProperties] = useState<CardProp[]>(fallbackProperties);
@@ -78,7 +74,6 @@ const Properties: React.FC = () => {
       if (!client) return;
 
       try {
-        // === FETCH NON-EXCLUSIVE ONLY ===
         const q = `*[_type == "property"] | order(_createdAt desc){
           title,
           location,
@@ -132,12 +127,27 @@ const Properties: React.FC = () => {
     };
   }, []);
 
+  // ---- Visible properties & responsive centering ----
+  const visibleProperties = !expanded ? properties.slice(0, 3) : properties;
+
+  const gridClasses =
+    visibleProperties.length === 1
+      ? "grid grid-cols-1 gap-10 max-w-md mx-auto"
+      : visibleProperties.length === 2
+      ? "grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto"
+      : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10";
+
   return (
     <section id="Properties">
       <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
         <div className="mb-16 flex flex-col gap-3 ">
           <div className="flex gap-2.5 items-center justify-center">
-            <Icon icon="ph:house-simple-fill" width={20} height={20} className="text-primary" />
+            <Icon
+              icon="ph:house-simple-fill"
+              width={20}
+              height={20}
+              className="text-primary"
+            />
             <p className="text-base font-semibold text-dark/75 dark:text-white/75">
               Propriétés
             </p>
@@ -151,18 +161,12 @@ const Properties: React.FC = () => {
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-          {!expanded
-            ? properties.slice(0, 3).map((item, index) => (
-                <div key={index}>
-                  <PropertyCard item={item} />
-                </div>
-              ))
-            : properties.map((item, index) => (
-                <div key={index}>
-                  <PropertyCard item={item} />
-                </div>
-              ))}
+        <div className={gridClasses}>
+          {visibleProperties.map((item, index) => (
+            <div key={index}>
+              <PropertyCard item={item} />
+            </div>
+          ))}
         </div>
 
         {/* BUTTON */}

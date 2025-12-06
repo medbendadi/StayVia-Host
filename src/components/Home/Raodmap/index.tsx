@@ -9,7 +9,7 @@ import {
 
 const Roadmap: React.FC = () => {
   return (
-    <section id="owners">
+    <section id="Comment_ça_marche" className="mt-17" style={{ paddingBlock: 0 }}>
       <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
         <div className="grid lg:grid-cols-2 gap-10 ">
         <div className="lg:px-12">
