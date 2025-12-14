@@ -135,7 +135,7 @@ const Testimonial = () => {
 
   return (
     <section
-      className="dark:bg-dark bg-white relative overflow-hidden mt-17"
+      className="dark:bg-black bg-white relative overflow-hidden mt-17"
       style={{ paddingBlock: 0 }}
       id="testimonial"
     >

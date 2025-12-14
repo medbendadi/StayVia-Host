@@ -292,9 +292,54 @@ export default function BookingForm({
 
   return (
     <section className="w-full bg-white dark:bg-black relative overflow-hidden mt-10">
-      <div className="absolute right-0 z-0 pointer-events-none">
-        <Image src="/images/testimonial/Vector.png" alt="victor" width={700} height={1039} unoptimized />
-      </div>
+ {/* Top right */}
+{/* Top Right */}
+<div className="absolute top-4 right-4 z-0 pointer-events-none">
+  <Image
+    src="/images/SVGs/18300873_5939337.svg"
+    alt="victor"
+    width={80}
+    height={80}
+    className="w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20"
+    unoptimized
+  />
+</div>
+
+{/* Top Left */}
+<div className="absolute top-4 left-4 z-0 pointer-events-none">
+  <Image
+    src="/images/SVGs/18300873_5939337.svg"
+    alt="victor"
+    width={80}
+    height={80}
+    className="w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20"
+    unoptimized
+  />
+</div>
+
+{/* Bottom Left */}
+<div className="absolute bottom-6 left-4 z-0 pointer-events-none">
+  <Image
+    src="/images/SVGs/ppo.svg"
+    alt="victor"
+    width={80}
+    height={80}
+    className="w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20"
+    unoptimized
+  />
+</div>
+
+{/* Bottom Right */}
+<div className="absolute bottom-6 right-4 z-0 pointer-events-none">
+  <Image
+    src="/images/SVGs/ppo.svg"
+    alt="victor"
+    width={80}
+    height={80}
+    className="w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20"
+    unoptimized
+  />
+</div>
 
       {/* <div
         className="h-44 md:h-56 bg-cover bg-center rounded-b-xl"
