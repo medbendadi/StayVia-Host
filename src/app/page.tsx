@@ -10,10 +10,12 @@ import Owners from '@/components/Home/Owners'
 import Roadmap from '@/components/Home/Raodmap'
 import RoomBooking from '@/components/RoomBooking/intex'
 import Example from '@/components/ui/dataPicker'
+import GoogleTranslate from '@/components/GoogleTranslate '
 
 export default function Home() {
   return (
     <main>
+      <GoogleTranslate />
       <Hero />
       <Services />
       <Properties />

@@ -7,6 +7,7 @@ import NavLink from './Navigation/NavLink'
 import { useTheme } from 'next-themes'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
+import GoogleTranslate from '@/components/GoogleTranslate ';
 
 const Header: React.FC = () => {
   const [sticky, setSticky] = useState(false)
