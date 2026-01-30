@@ -4,7 +4,7 @@ const Logo: React.FC = () => {
   return (
     <>
       <Image
-        src={'/images/header/logo.svg'}
+        src={'/images/header/logo.png'}
         alt='logo'
         width={140}
         height={58}
@@ -12,7 +12,7 @@ const Logo: React.FC = () => {
         className='dark:hidden'
       />
       <Image
-        src={'/images/header/dark-logo.svg'}
+        src={'/images/header/dark-logo.png'}
         alt='logo'
         width={140}
         height={58}

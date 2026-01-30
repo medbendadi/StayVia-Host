@@ -4,53 +4,53 @@ import Plan from "./Plans";
 const Tarifs: React.FC = () => {
   const tarifs = [
     {
-      title: 'Pack Ménage',
-      subtitle: 'Ménage professionnel effectué par notre agence',
-      price: '200 MAD',
-      type: 'Basic',
+      title: "Pack Ménage",
+      subtitle: "Service de ménage professionnel sur mesure",
+      price: "Tarif personnalisé après évaluation du logement",
+      type: "Normal",
       features: [
-        "Ménage de Qualité Hotelière",
-        "Matériel professionnel",
-        "Contrôle qualité par la gouvernante",
-        "Prise de Photos datées après chaque ménage",
-        "Blanchisserie"
+        "Service de ménage professionnel sur mesure",
+        "Standards hôteliers appliqués à chaque intervention",
+        "Équipements et produits professionnels",
+        "Supervision et contrôle qualité par notre gouvernante",
+        "Reporting visuel avec photos datées",
+        "Gestion complète de la blanchisserie"
       ]
     },
     {
       title: 'Pack Premium',
       subtitle: 'Gestion complète de vos annonces en ligne',
-      price: '18% des revenues locatifs TTC',
+      price: '25% des revenues locatifs TTC',
       type: 'Pro',
       features: [
-        "Pack Ménage Inclus",
-        "Pack Virtuel Inclus",
-        "Accompagnement juridique",
-        "Prise de Photos Pro",
-        "Création et Publication De l’annonce",
-        "Marketing et Publicité",
-        "Check-in / Check-out",
-        "Service Client Voyageur virtuel et physique",
-        "Assurances et Dédommagements",
-        "Expertise avec le Support Airbnb/ Booking.com",
-        "Guide d’accueil et cadeau de bienvenue",
-        "Fiches de Police et contrat de location (20%)"
+        "Pack Ménage inclus",
+        "Pack Virtuel inclus",
+        "Diffusion et pilotage de l’annonce sur les plateformes dédiées",
+        "Photos professionnelles & valorisation du bien",
+        "Marketing, visibilité et optimisation des réservations",
+        "Check-in / Check-out & expérience voyageur",
+        "Service client dédié (24/7 – virtuel & sur place)",
+        "Accompagnement juridique & conformité réglementaire",
+        "Assurances",
+        "Protection et gestion des incidents",
+        "Support expert Airbnb & Booking.com",
+        "Guide d’accueil & kit de bienvenue",
+        "Reporting mensuel de votre activité"
       ]
     },
     {
       title: 'Pack Virtuel',
       subtitle: 'Service complet de base pour votre location',
-      price: '12% des revenues locatifs TTC',
+      price: '20% des revenues locatifs TTC',
       type: 'Normal',
       features: [
-        "Création et publication de l’annonce",
-        "Marketing et publicité",
-        "Stratégies de prix",
-        "Communication virtuelle avec les voyageurs",
-        "Expertise sur les plateformes Airbnb/Booking",
-        "Suppression des commentaires négatifs",
-        "Centralisation du calendrier",
-        "Digitalisation des fiches de police et des contrats de location",
-        "Coordination avec votre système de ménage."
+        "Création et diffusion de l’annonce",
+        "Marketing, visibilité et publicité ciblée",
+        "Stratégie de prix dynamique et optimisation des revenus",
+        "Communication voyageurs",
+        "Centralisation et synchronisation du calendrier",
+        "Digitalisation des documents réglementaires",
+        "Coordination avec le service de ménage"
       ]
     }
   ];

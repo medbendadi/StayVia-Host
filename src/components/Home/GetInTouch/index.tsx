@@ -20,7 +20,7 @@ const GetInTouch: React.FC = () => {
                             <h2 className='text-white lg:text-52 md:text-40 text-3xl max-w-3/4 text-center font-medium'>
                             Rejoignez-nous pour optimiser vos revenus locatifs tout en profitant sereinement de votre temps.
                             </h2>
-                            <Link href="#" className='bg-white py-4 px-8 rounded-full text-dark hover:bg-dark active:bg-dark hover:text-white active:text-white duration-300'>
+                            <Link href="/contactus" className='bg-white py-4 px-8 rounded-full text-dark hover:bg-dark active:bg-dark hover:text-white active:text-white duration-300'>
                                 Tester mon logement
                             </Link>
                         </div>

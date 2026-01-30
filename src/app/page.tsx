@@ -21,10 +21,8 @@ export default function Home() {
       <Properties />
       <Owners />
       <Roadmap />
-      <RoomBooking/>
       <FeaturedProperty />
       <Testimonial />
-      {/* <BlogSmall /> */}
       <GetInTouch />
       <FAQ />
     </main>

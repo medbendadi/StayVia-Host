@@ -139,9 +139,8 @@ const Owners: React.FC = () => {
             </h2>
 
             <p className="text-dark/50 dark:text-white/50 pr-20">
-              Fondée par l'équipe fondatrice, STAY VIA accompagne les propriétaires
-              dans la gestion complète de leurs locations.
-              Notre mission : transformer chaque logement en adresse d’exception.
+            Fondée par son équipe fondatrice, STAY VIA accompagne les propriétaires dans la gestion complète de leurs biens en location.
+            Notre mission : transformer chaque logement en une adresse d’exception, alliant performance, sérénité et excellence du service.
             </p>
 
             <div className="my-8">
@@ -154,8 +153,8 @@ const Owners: React.FC = () => {
                 <AccordionItem value="item-1">
                   <AccordionTrigger>Pourquoi nous choisir ?</AccordionTrigger>
                   <AccordionContent>
-                    1. Expertise en gestion locative de luxe. <br />
-                    2. Service personnalisé et discret. <br />
+                    1. Expertise en gestion locative haut de gamme. <br />
+                    2. Service personnalisé, discret et attentif aux détails. <br />
                     3. Tranquillité d’esprit totale pour les propriétaires. <br />
                     4. Expérience cinq étoiles pour les voyageurs. <br />
                   </AccordionContent>
@@ -164,10 +163,10 @@ const Owners: React.FC = () => {
                 <AccordionItem value="item-2">
                   <AccordionTrigger>Nos missions</AccordionTrigger>
                   <AccordionContent>
-                    1. Offrir une expérience haut de gamme aux voyageurs. <br />
-                    2. Garantir des revenus optimisé. <br />
-                    3. Propreté & maintenance. <br />
-                    4. Suivi complet du check-in à l’analyse des performances. <br />
+                    1. Offrir une expérience premium aux voyageurs. <br />
+                    2. Garantir des revenus optimisés pour les propriétaires. <br />
+                    3. Assurer une propreté irréprochable et une maintenance continue. <br />
+                    4. Gérer l’ensemble du parcours, du check-in à l’analyse des performances. <br />
                   </AccordionContent>
                 </AccordionItem>
 
@@ -180,7 +179,7 @@ const Owners: React.FC = () => {
                       </div>
                     ))}
                     <span className="text-primary">Vision : </span>
-                    offrir une conciergerie premium alliant efficacité & élégance.
+                    Animée par une passion profonde pour le voyage et l’hospitalité, Dalila Hajbani a construit sa vision au fil de ses expériences à l’international. Ces parcours lui ont permis de développer une compréhension fine des standards du service haut de gamme, où chaque détail compte et où l’excellence n’est jamais laissée au hasard.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

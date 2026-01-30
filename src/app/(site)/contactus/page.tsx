@@ -26,12 +26,10 @@ export default function ContactUs() {
         </div>
         <div className='text-center'>
           <h3 className='text-4xl sm:text-52 font-medium tracking-tighter text-black dark:text-white mb-3 leading-10 sm:leading-14'>
-            Des questions ? Nous sommes là pour vous aider !
+            Confiez-nous votre bien en toute sérénité ! 
           </h3>
           <p className='text-xm font-normal tracking-tight text-black/50 dark:text-white/50 leading-6'>
-            À la recherche de votre maison idéale ou prêt à vendre ?
-            Notre équipe d’experts vous accompagne avec des conseils personnalisés
-            et une parfaite connaissance du marché.
+            Que vous soyez propriétaire d’un bien ou en réflexion sur sa rentabilité, notre équipe vous accompagne avec une approche personnalisée et une parfaite maîtrise de la gestion locative premium.
           </p>
         </div>
       </div>
@@ -54,8 +52,7 @@ export default function ContactUs() {
                 Informations de contact
               </h5>
               <p className='text-sm xs:text-base mobile:text-xm font-normal text-white/80'>
-                Prêt à trouver votre maison idéale ou à vendre votre bien ?
-                Nous sommes à votre écoute !
+                Contactez-nous pour une étude sur mesure de votre bien.
               </p>
             </div>
 
@@ -64,7 +61,7 @@ export default function ContactUs() {
                 <div className='flex items-center gap-4 group w-fit'>
                   <Icon icon={'ph:phone'} width={32} height={32} />
                   <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary group-active:text-primary'>
-                    +212 604525479
+                    +212 610999299
                   </p>
                 </div>
               </Link>
@@ -73,7 +70,7 @@ export default function ContactUs() {
                 <div className='flex items-center gap-4 group w-fit'>
                   <Icon icon={'ph:envelope-simple'} width={32} height={32} />
                   <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary group-active:text-primary'>
-                    support@gleamer.com
+                    stayviahost@gmail.com
                   </p>
                 </div>
               </Link>
@@ -128,7 +125,7 @@ export default function ContactUs() {
                   cols={50}
                   name='message'
                   id='message'
-                  placeholder='Écrivez votre message ici'
+                  placeholder='Décrivez votre bien et votre besoin'
                   required
                   className='px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-2xl outline-primary focus:outline'
                 ></textarea>

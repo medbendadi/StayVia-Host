@@ -59,7 +59,7 @@ const Footer = () => {
                   className="inline-flex items-center gap-3 rounded-full bg-white/10 px-5 py-3 text-sm text-white hover:bg-white hover:text-dark transition-colors duration-300"
                 >
                   <Icon icon="ic:baseline-whatsapp" width={18} height={18} />
-                  <span>+212 634 596 499</span>
+                  <span>+212 610 999 299</span>
                 </Link>
 
                 {/* LinkedIn */}

@@ -46,17 +46,17 @@ const Header: React.FC = () => {
           <div>
             <Link href='/'>
               <Image
-                src={'/images/header/logo.svg'}
+                src={'/images/header/logo.png'}
                 alt='logo'
-                width={140}
+                width={sticky ? 60 : 90}
                 height={58}
                 unoptimized={true}
                 className={`${isHomepage ? sticky ? "block dark:hidden ml-7" : "hidden" : sticky ? "block dark:hidden ml-7" : "block dark:hidden"}`}
               />
               <Image
-                src={'/images/header/dark-logo.svg'}
+                src={'/images/header/dark-logo.png'}
                 alt='logo'
-                width={140}
+                width={sticky ? 60 : 90}
                 height={58}
                 unoptimized={true}
                 className={`${isHomepage ? sticky ? "hidden dark:block ml-7" : "block" : sticky ? "dark:block hidden ml-7" : "dark:block hidden"}`}
@@ -95,7 +95,7 @@ const Header: React.FC = () => {
                 }`}
               >
                 <Icon icon={'ph:phone-bold'} width={24} height={24} />
-                +212 604525479
+                +212 610999299
               </Link>
             </div>
             <div>
@@ -168,7 +168,7 @@ const Header: React.FC = () => {
               hello@homely.com
             </Link>
             <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary active:text-primary'>
-              +212 604525479{' '}
+              +212 610999299{' '}
             </Link>
           </div>
         </div>

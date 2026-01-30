@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
                 href="/tarifs"
                 className='px-8 py-4 border border-white dark:border-dark bg-white dark:bg-dark text-dark dark:text-white duration-300 dark:hover:text-white hover:bg-transparent hover:text-white dark:active:text-white active:bg-transparent active:text-white text-base font-semibold rounded-full hover:cursor-pointer active:cursor-pointer'
               >
-                Demander un audit gratuit
+                Estimer mes revenus
               </Link>
               <Link
                 href={'/#Properties'}
@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <p className='text-sm sm:text-base font-normal text-inherit'>
-                Support 24h/24
+                Support 24h/7j
               </p>
             </div>
             <div className='flex flex-col sm:items-center gap-3'>
@@ -125,10 +125,10 @@ const Hero: React.FC = () => {
             </div>
             <div className='flex flex-col sm:items-center gap-3'>
               <p className='text-2xl sm:text-3xl font-medium text-inherit'>
-                +200 DH
+                +200$
               </p>
               <p className='text-sm sm:text-base font-normal text-black/50 dark:text-white/50'>
-                A partir de
+                Rentabilité optimisée
               </p>
             </div>
           </div>

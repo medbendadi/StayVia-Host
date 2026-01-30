@@ -8,14 +8,14 @@ export const LogoConfiguration = () => {
 
           <div className="text-sm text-gray-400">
             <p className="ms-2">&#x3C;Image</p>
-            <p className="ms-3">src=&#x22;/images/header/logo.svg&#x22;</p>
+            <p className="ms-3">src=&#x22;/images/header/logo.png&#x22;</p>
             <p className="ms-3">alt=&#x22;logo&#x22;</p>
             <p className="ms-3">width={150}</p>
             <p className="ms-3">height={68}</p>
             <p className="ms-3">className=&#x22;&#123;&#36;isHomepage ? sticky ? &#x22;block dark:hidden&#x22; : &#x22;hidden&#x22; : sticky ? &#x22;block dark:hidden&#x22; : &#x22;block dark:hidden&#x22;&#125;&#x22;</p>
             <p>/&#x3E;</p>
             <p className="ms-2">&#x3C;Image</p>
-            <p className="ms-5">src=&#x22;/images/header/dark-logo.svg&#x22;</p>
+            <p className="ms-5">src=&#x22;/images/header/dark-logo.png&#x22;</p>
             <p className="ms-5">alt=&#x22;logo&#x22;</p>
             <p className="ms-5">width={150}</p>
             <p className="ms-5">height={68}</p>
