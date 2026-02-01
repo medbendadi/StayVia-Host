@@ -164,10 +164,10 @@ const Header: React.FC = () => {
             <p className='text-base sm:text-xm font-normal text-white/40'>
               Contact
             </p>
-            <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary active:text-primary'>
-              hello@homely.com
+            <Link href="mailto:stayviahost@gmail.com" className='text-base sm:text-xm font-medium text-inherit hover:text-primary active:text-primary'>
+              stayviahost@gmail.com
             </Link>
-            <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary active:text-primary'>
+            <Link href={'https://wa.me/212610999299'} target="_blank" className='text-base sm:text-xm font-medium text-inherit hover:text-primary active:text-primary'>
               +212 610999299{' '}
             </Link>
           </div>
