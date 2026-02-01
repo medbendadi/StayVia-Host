@@ -1,11 +1,117 @@
-import { Icon } from '@iconify/react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-    title: "Contactez-nous | STAY VIA",
-};
+import { Icon } from '@iconify/react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+
+function ContactForm() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setMessage("");
+    setLoading(true);
+  
+    if (!executeRecaptcha) {
+      setLoading(false);
+      setMessage("reCAPTCHA en cours de chargement, réessayez.");
+      return;
+    }
+  
+    const token = await executeRecaptcha("contact_form");
+  
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+  
+    const data = {
+      username: formData.get("username") as string,
+      mobile: formData.get("mobile") as string,
+      email: formData.get("email") as string,
+      message: formData.get("message") as string,
+      token,
+    };
+  
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+  
+    setLoading(false);
+  
+    if (res.ok) {
+      setMessage("✅ Message envoyé avec succès !");
+      form.reset();
+    } else {
+      setMessage("❌ Une erreur est survenue.");
+    }
+  };
+  
+  
+  
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className='flex flex-col gap-8'>
+
+        <div className='flex flex-col lg:flex-row gap-6'>
+          <input
+            type='text'
+            name='username'
+            placeholder='Nom*'
+            required
+            className='px-6 py-3.5 border rounded-full w-full'
+          />
+
+          <input
+            type='number'
+            name='mobile'
+            placeholder='Numéro de téléphone*'
+            required
+            className='px-6 py-3.5 border rounded-full w-full'
+          />
+        </div>
+
+        <input
+          type='email'
+          name='email'
+          placeholder='Adresse e-mail*'
+          required
+          className='px-6 py-3.5 border rounded-full'
+        />
+
+        <textarea
+          rows={8}
+          name='message'
+          placeholder='Décrivez votre bien et votre besoin'
+          required
+          className='px-6 py-3.5 border rounded-2xl'
+        />
+
+        <button
+          type="submit"
+          disabled={loading}
+          className='px-8 py-4 rounded-full bg-primary text-white font-semibold hover:bg-dark disabled:opacity-50'
+        >
+          {loading ? "Envoi..." : "Envoyer le message"}
+        </button>
+
+        {message && (
+          <p className="text-sm text-green-600">
+            {message}
+          </p>
+        )}
+
+      </div>
+    </form>
+  );
+}
+
+
 
 export default function ContactUs() {
   return (
@@ -57,7 +163,7 @@ export default function ContactUs() {
             </div>
 
             <div className='absolute bottom-6 left-6 lg:bottom-12 lg:left-12 flex flex-col gap-4 text-white'>
-              <Link href={'/'} className='w-fit'>
+              <Link href={'https://wa.me/212610999299'} target="_blank" className='w-fit'>
                 <div className='flex items-center gap-4 group w-fit'>
                   <Icon icon={'ph:phone'} width={32} height={32} />
                   <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary group-active:text-primary'>
@@ -85,56 +191,7 @@ export default function ContactUs() {
           </div>
 
           <div className='flex-1/2'>
-            <form>
-              <div className='flex flex-col gap-8'>
-
-                <div className='flex flex-col lg:flex-row gap-6'>
-                  <input
-                    type='text'
-                    name='username'
-                    id='username'
-                    autoComplete='username'
-                    placeholder='Nom*'
-                    required
-                    className='px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-full outline-primary focus:outline w-full'
-                  />
-
-                  <input
-                    type='number'
-                    name='mobile'
-                    id='mobile'
-                    autoComplete='mobile'
-                    placeholder='Numéro de téléphone*'
-                    required
-                    className='px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-full outline-primary focus:outline w-full'
-                  />
-                </div>
-
-                <input
-                  type='email'
-                  name='email'
-                  id='email'
-                  autoComplete='email'
-                  placeholder='Adresse e-mail*'
-                  required
-                  className='px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-full outline-primary focus:outline'
-                />
-
-                <textarea
-                  rows={8}
-                  cols={50}
-                  name='message'
-                  id='message'
-                  placeholder='Décrivez votre bien et votre besoin'
-                  required
-                  className='px-6 py-3.5 border border-black/10 dark:border-white/10 rounded-2xl outline-primary focus:outline'
-                ></textarea>
-
-                <button className='px-8 py-4 rounded-full bg-primary text-white text-base font-semibold w-full mobile:w-fit hover:cursor-pointer active:cursor-pointer hover:bg-dark active:bg-dark duration-300'>
-                  Envoyer le message
-                </button>
-              </div>
-            </form>
+            <ContactForm/>
           </div>
 
         </div>

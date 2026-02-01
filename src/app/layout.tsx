@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${font.className} bg-white dark:bg-black antialiased`}>
         {/* AppProvidersClient is a client component that contains ThemeProvider, Header, Footer */}
         <AppProvidersClient>{children}</AppProvidersClient>
