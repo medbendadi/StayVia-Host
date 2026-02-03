@@ -294,7 +294,7 @@ const FeaturedProperty: React.FC = () => {
     <section>
       <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
         <div className="grid lg:grid-cols-2 gap-10">
-          <div className="relative">
+          <div className="relative w-full">
             <Carousel
               key={images.length} // force remount when image count changes
               setApi={setApi}
@@ -327,71 +327,88 @@ const FeaturedProperty: React.FC = () => {
               </CarouselContent>
             </Carousel>
 
-            <div className="absolute left-2/5 bg-dark/50 rounded-full py-2.5 bottom-10 flex justify-center mt-4 gap-2.5 px-2.5">
+              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-dark/60 backdrop-blur-sm rounded-2xl py-2 px-4 flex flex-wrap justify-center gap-2.5 max-w-[85%] z-20">
               {Array.from({ length: Math.max(1, count || images.length) }).map((_, index) => (
                 <button
                   key={index}
                   onClick={() => handleDotClick(index)}
-                  className={`w-2.5 h-2.5 rounded-full ${current === index + 1 ? "bg-white" : "bg-white/50"}`}
+                  // Added a transition and slightly smaller dots for mobile (w-2)
+                  className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full transition-all duration-300 ${
+                    current === index + 1 
+                      ? "bg-white scale-110" 
+                      : "bg-white/40 hover:bg-white/60"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
           </div>
-
-          <div className="flex flex-col gap-10">
+          {/* 1. Reduced gap for mobile (gap-6), kept it large for desktop (md:gap-10) */}
+          <div className="flex flex-col gap-6 md:gap-10">
             <div>
-              <p className="text-dark/75 dark:text-white/75 text-base font-semibold flex gap-2">
-                <Icon icon="ph:house-simple-fill" className="text-2xl text-primary " />
+              <p className="text-dark/75 dark:text-white/75 text-sm md:text-base font-semibold flex items-center gap-2 mb-2">
+                <Icon icon="ph:house-simple-fill" className="text-xl md:text-2xl text-primary" />
                 Sélection exclusive
               </p>
-              <h2 className="lg:text-52 text-40 font-medium text-dark dark:text-white">{title}</h2>
-              <div className="flex items-center gap-2.5">
-                <Icon icon="ph:map-pin" width={28} height={26} className="text-dark/50 dark:text-white/50" />
-                <p className="text-dark/50 dark:text-white/50 text-base">{location}</p>
+              
+              {/* 2. Scaled title: 32px on mobile, 40px on tablet, 52px on large screens */}
+              <h2 className="text-3xl md:text-4xl lg:text-52 font-medium text-dark dark:text-white leading-tight">
+                {title}
+              </h2>
+
+              <div className="flex items-center gap-2.5 mt-2">
+                <Icon icon="ph:map-pin" width={24} height={24} className="text-dark/50 dark:text-white/50" />
+                <p className="text-dark/50 dark:text-white/50 text-sm md:text-base">{location}</p>
               </div>
             </div>
 
-            <p className="text-base text-dark/50 dark:text-white/50">
+            <p className="text-sm md:text-base text-dark/50 dark:text-white/50 leading-relaxed">
               {property?.description ??
                 "Bel emplacement, confort et finitions soignées. Idéal pour affaires ou détente — retrouvez une expérience mémorable."}
             </p>
 
-            <div className="grid grid-cols-2 gap-10">
-              <div className="flex items-center gap-4">
-                <div className="bg-dark/5 dark:bg-white/5 p-2.5 rounded-[6px]">
-                  <Image src={"/images/hero/sofa.svg"} alt="sofa" width={24} height={24} className="block dark:hidden" unoptimized={true} />
-                  <Image src={"/images/hero/dark-sofa.svg"} alt="sofa" width={24} height={24} className="hidden dark:block" unoptimized={true} />
+            {/* 3. Grid: Reduced gap on mobile so items don't feel disconnected */}
+            <div className="grid grid-cols-2 gap-4 md:gap-10">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="bg-dark/5 dark:bg-white/5 p-2 rounded-[6px]">
+                  <Image src={"/images/hero/sofa.svg"} alt="sofa" width={20} height={20} className="block dark:hidden md:w-6 md:h-6" unoptimized={true} />
+                  <Image src={"/images/hero/dark-sofa.svg"} alt="sofa" width={20} height={20} className="hidden dark:block md:w-6 md:h-6" unoptimized={true} />
                 </div>
-                <h6 className="">{bedrooms} Chambres</h6>
+                <h6 className="text-sm md:text-base font-medium">{bedrooms} Chambres</h6>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="bg-dark/5 dark:bg-white/5 p-2.5 rounded-[6px]">
-                  <Image src={"/images/hero/tube.svg"} alt="tube" width={24} height={24} className="block dark:hidden" unoptimized={true} />
-                  <Image src={"/images/hero/dark-tube.svg"} alt="tube" width={24} height={24} className="hidden dark:block" unoptimized={true} />
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="bg-dark/5 dark:bg-white/5 p-2 rounded-[6px]">
+                  <Image src={"/images/hero/tube.svg"} alt="tube" width={20} height={20} className="block dark:hidden md:w-6 md:h-6" unoptimized={true} />
+                  <Image src={"/images/hero/dark-tube.svg"} alt="tube" width={20} height={20} className="hidden dark:block md:w-6 md:h-6" unoptimized={true} />
                 </div>
-                <h6 className="">{bathrooms} Salle{bathrooms > 1 ? "s" : ""} de bain</h6>
+                <h6 className="text-sm md:text-base font-medium">{bathrooms} SDB</h6>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="bg-dark/5 dark:bg-white/5 p-2.5 rounded-[6px]">
-                  <Image src={"/images/hero/parking.svg"} alt="parking" width={24} height={24} className="block dark:hidden" unoptimized={true} />
-                  <Image src={"/images/hero/dark-parking.svg"} alt="parking" width={24} height={24} className="hidden dark:block" unoptimized={true} />
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="bg-dark/5 dark:bg-white/5 p-2 rounded-[6px]">
+                  <Image src={"/images/hero/parking.svg"} alt="parking" width={20} height={20} className="block dark:hidden md:w-6 md:h-6" unoptimized={true} />
+                  <Image src={"/images/hero/dark-parking.svg"} alt="parking" width={20} height={20} className="hidden dark:block md:w-6 md:h-6" unoptimized={true} />
                 </div>
-                <h6 className="">{parking}</h6>
+                <h6 className="text-sm md:text-base font-medium truncate">{parking}</h6>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="bg-dark/5 dark:bg-white/5 p-2.5 rounded-[6px]">
-                  <Image src={"/images/SVGs/wifi.svg"} alt="wifi" width={24} height={24} className="block dark:hidden" unoptimized={true} />
-                  <Image src={"/images/SVGs/wifi-dark.svg"} alt="wifi" width={24} height={24} className="hidden dark:block" unoptimized={true} />
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="bg-dark/5 dark:bg-white/5 p-2 rounded-[6px]">
+                  <Image src={"/images/SVGs/wifi.svg"} alt="wifi" width={20} height={20} className="block dark:hidden md:w-6 md:h-6" unoptimized={true} />
+                  <Image src={"/images/SVGs/wifi-dark.svg"} alt="wifi" width={20} height={20} className="hidden dark:block md:w-6 md:h-6" unoptimized={true} />
                 </div>
-                <h6 className="">{wifi}</h6>
+                <h6 className="text-sm md:text-base font-medium truncate">{wifi}</h6>
               </div>
             </div>
 
-            <div className="flex mx-auto">
-              <Link href={reserveLink} target="_blank" className="py-4 px-[6rem] bg-primary hover:bg-dark active:bg-dark duration-300 rounded-full text-white">
+            {/* 4. Button: Full width on mobile, fixed width on desktop */}
+            <div className="flex w-full md:w-auto md:mx-auto">
+              <Link 
+                href={reserveLink} 
+                target="_blank" 
+                className="w-full md:w-auto py-4 px-10 md:px-[6rem] bg-primary hover:bg-dark active:bg-dark duration-300 rounded-full text-white text-center font-semibold"
+              >
                 Réserver
               </Link>
             </div>

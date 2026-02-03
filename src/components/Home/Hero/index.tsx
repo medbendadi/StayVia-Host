@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             </h1>
             <div className='flex flex-col md:flex-row justify-center md:justify-start gap-4'>
               <Link
-                href="/tarifs"
+                href="/contactus"
                 className='px-8 py-4 border border-white dark:border-dark bg-white dark:bg-dark text-dark dark:text-white duration-300 dark:hover:text-white hover:bg-transparent hover:text-white dark:active:text-white active:bg-transparent active:text-white text-base font-semibold rounded-full hover:cursor-pointer active:cursor-pointer'
               >
                 Estimer mes revenus

@@ -4,7 +4,12 @@ import Link from "next/link";
 
 const Categories = () => {
   return (
-    <section className="relative overflow-hidden mt-17" style={{ paddingBlock: 0 }} id="services">
+    <section
+      id="services"
+      className="relative overflow-hidden mt-17"
+      style={{ paddingBlock: 0 }}
+    >
+      {/* Background Vector */}
       <div className="absolute left-0 top-0">
         <Image
           src="/images/categories/Vector.svg"
@@ -12,7 +17,7 @@ const Categories = () => {
           width={800}
           height={1050}
           className="dark:hidden"
-          unoptimized={true}
+          unoptimized
         />
         <Image
           src="/images/categories/Vector-dark.svg"
@@ -20,138 +25,122 @@ const Categories = () => {
           width={800}
           height={1050}
           className="hidden dark:block"
-          unoptimized={true}
+          unoptimized
         />
       </div>
+
       <div className="container max-w-8xl mx-auto px-5 2xl:px-0 relative z-10">
-        <div className="grid grid-cols-12 items-center lg:gap-10">
+
+        {/* HERO ROW */}
+        <div className="grid grid-cols-12 lg:gap-10 items-center">
+          
+          {/* TEXT */}
           <div className="lg:col-span-6 col-span-12">
-            <p className="text-dark/75 dark:text-white/75 text-base font-semibold flex gap-2.5">
-              <Icon icon="ph:house-simple-fill" className="text-2xl text-primary " />
+            <p className="text-dark/75 dark:text-white/75 text-base font-semibold flex gap-2.5 items-center">
+              <Icon
+                icon="ph:house-simple-fill"
+                className="text-2xl text-primary"
+              />
               STAYVIA HOST
             </p>
-            <h2 className="lg:text-52 text-40 mt-4 mb-2 lg:max-w-full font-medium leading-[1.2] text-dark dark:text-white">
+
+            <h2 className="lg:text-52 text-40 mt-4 mb-3 font-medium leading-[1.2] text-dark dark:text-white">
               Gestion Locative Simplifiée
             </h2>
-            <p className="text-dark/50 dark:text-white/50 text-lg lg:max-w-full leading-[1.3] sm:max-w-3/4">
+
+            <p className="text-dark/50 dark:text-white/50 text-lg leading-[1.35] max-w-xl">
               Confiez-nous la gestion complète de vos locations pour une tranquillité totale.
             </p>
-            <Link href="/tarifs" className="py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark active:bg-dark duration-300">
-              Nos Tarifs
+
+            <Link
+              href="/contactus"
+              className="inline-block mt-8 py-4 px-8 bg-primary text-white rounded-full font-semibold hover:bg-dark duration-300"
+            >
+              Rejoindre StayVia
             </Link>
           </div>
-          <div className="lg:col-span-6 col-span-12 my-7 lg:my-0">
-            <div className="relative rounded-2xl overflow-hidden group">
-              <div className="w-[90%] mx-auto sm:w-auto aspect-[82/100] sm:aspect-[16/9]">
-                <Image
-                  src="/images/categories/comunication.webp"
-                  alt="villas"
-                  fill
-                  className="object-cover rounded-2xl"
-                  unoptimized={true}
-                />
-              </div>
-              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
-                <div className="flex justify-end mt-6 mr-6">
-                  {/* <div className="bg-white text-dark rounded-full w-fit p-4">
-                    <Icon icon="ph:arrow-right" width={24} height={24} />
-                  </div> */}
-                </div>
-                <div className="flex flex-col gap-2.5">
-                  <h3 className="text-white text-2xl">
-                    Communication 24h/7j avec les voyageurs
-                  </h3>
-                  <p className="text-white/80 text-base leading-6">
-                    Nous répondons à vos voyageurs à toute heure pour garantir une expérience fluide et sans stress.
-                  </p>
-                </div>
-              </div>
+
+          {/* HERO IMAGE */}
+          <div className="lg:col-span-6 col-span-12 mt-10 lg:mt-0">
+            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/categories/comunication.webp"
+                alt="Communication voyageurs"
+                fill
+                className="object-cover"
+                unoptimized
+              />
             </div>
           </div>
-          <div className="lg:col-span-6 col-span-12 mb-7 lg:mb-0">
-            <div className="relative rounded-2xl overflow-hidden group">
-              <div className="w-[90%] mx-auto sm:w-auto aspect-[82/100] sm:aspect-[16/9]">
-                <Image
-                  src="/images/categories/menagee.avif"
-                  alt="villas"
-                  fill
-                  className="object-cover rounded-2xl"
-                  unoptimized={true}
-                />
-              </div>
+        </div>
 
-              <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
-                <div className="flex justify-end mt-6 mr-6">
-                  {/* <div className="bg-white text-dark rounded-full w-fit p-4">
-                    <Icon icon="ph:arrow-right" width={24} height={24} />
-                  </div> */}
-                </div>
-                <div className="flex flex-col gap-2.5">
-                  <h3 className="text-white text-2xl">
-                    Ménage & Entretien
-                  </h3>
-                  <p className="text-white/80 text-base leading-6">
-                    Nettoyage haut de gamme, gestion du linge et entretien minutieux.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="lg:col-span-3 md:col-span-6 col-span-12 mb-8 lg:mb-0">
-  <div className="relative rounded-2xl overflow-hidden group">
-    <div className="w-[90%] mx-auto sm:w-auto aspect-[82/100]">
-      <Image
-        src="/images/categories/keys.jpg"
-        alt="villas"
-        fill
-        className="object-cover rounded-2xl"
-        unoptimized={true}
-      />
-    </div>
+        {/* DIVIDER */}
+        <div className="mt-12 mb-6 h-px w-full bg-dark/5 dark:bg-white/10" />
 
-    <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
-      <div className="flex justify-end mt-6 mr-6" />
-      <div className="flex flex-col gap-2.5">
-        <h3 className="text-white text-2xl">
-          Check-in & Check-out professionnels
-        </h3>
-        <p className="text-white/80 text-base leading-6">
-          Une arrivée chaleureuse et professionnelle pour offrir la meilleure première impression.
+        {/* SECTION LABEL */}
+        <p className="text-sm font-semibold text-primary mb-6">
+          Nos services inclus
         </p>
+
+        {/* SERVICES GRID */}
+        <div className="grid grid-cols-12 gap-6 pb-4">
+
+          <FeatureCard
+            img="/images/categories/menagee.avif"
+            title="Ménage & Entretien"
+            desc="Nettoyage haut de gamme, gestion du linge et entretien minutieux."
+          />
+
+          <FeatureCard
+            img="/images/categories/keys.jpg"
+            title="Check-in & Check-out"
+            desc="Une arrivée chaleureuse et professionnelle pour offrir la meilleure première impression."
+          />
+
+          <FeatureCard
+            img="/images/categories/finance.jpg"
+            title="Optimisation des Revenus"
+            desc="Maximisez vos gains grâce à une tarification dynamique et une gestion intelligente des réservations."
+          />
+
+          <FeatureCard
+            img="/images/categories/maintenance.jpg"
+            title="Maintenance & Décoration"
+            desc="Nous mobilisons des artisans experts et des décorateurs professionnels pour transformer vos espaces en lieux élégants, fonctionnels et rentables."
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ---------------------------------- */
+/* FEATURE CARD COMPONENT              */
+/* ---------------------------------- */
+
+const FeatureCard = ({ img, title, desc }) => {
+  return (
+    <div className="lg:col-span-3 md:col-span-6 col-span-12">
+      <div className="relative aspect-[3/4] rounded-2xl overflow-hidden group">
+        <Image
+          src={img}
+          alt={title}
+          fill
+          className="object-cover"
+          unoptimized
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-black/80 translate-y-full group-hover:translate-y-0 duration-500 flex flex-col justify-end p-6">
+          <h3 className="text-white text-xl font-semibold">
+            {title}
+          </h3>
+          <p className="text-white/80 text-sm mt-2 leading-5">
+            {desc}
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-<div className="lg:col-span-3 md:col-span-6 col-span-12 mb-8 lg:mb-0">
-  <div className="relative rounded-2xl overflow-hidden group">
-    <div className="w-[90%] mx-auto sm:w-auto aspect-[82/100]">
-      <Image
-        src="/images/categories/finance.jpg"
-        alt="office"
-        fill
-        className="object-cover rounded-2xl"
-        unoptimized={true}
-      />
-    </div>
-
-    <div className="absolute w-full h-full bg-gradient-to-b from-black/0 to-black/80 top-full flex flex-col justify-between pl-10 pb-10 group-hover:top-0 group-active:top-0 duration-500">
-      <div className="flex justify-end mt-6 mr-6" />
-      <div className="flex flex-col gap-2.5">
-        <h3 className="text-white text-2xl">
-          Optimisation des Revenus
-        </h3>
-        <p className="text-white/80 text-base leading-6">
-          Maximisez vos gains grâce à une tarification dynamique et une gestion intelligente des réservations.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-    </div>
-    </section >
   );
 };
 

@@ -61,7 +61,7 @@ const Roadmap: React.FC = () => {
                 className='block mr-3'
                 unoptimized={true}
               />
-              Optimisation basée sur les données
+              Optimisation guidée par les données
             </div>
 
             <div className="flex items-center ml-4 mb-3">
@@ -73,7 +73,7 @@ const Roadmap: React.FC = () => {
                 className='block mr-3'
                 unoptimized={true}
               />
-              Support disponible 24/7
+              Support 24/7
             </div>
           </div>
 
@@ -190,7 +190,7 @@ const Roadmap: React.FC = () => {
             <h2 className="lg:text-3xl text-lg lg:mb-4 mb-2 leading-[1.2] font-medium text-dark dark:text-white">
             Analyse & optimisation continue</h2>
             <p className="text-dark/50 lg:text-xl text-sm dark:text-white/50 pr-20">
-            Nous analysons régulièrement les performances de votre location et ajustons la stratégie afin de maximiser en continu votre rendement locatif.
+              Nous analysons régulièrement les performances de votre location et ajustons la stratégie afin de maximiser en continu votre rendement locatif. Grâce à des systèmes digitaux avancés, nous suivons les données en temps réel pour obtenir des résultats encore plus performants.
             </p>
             </div>
             <div className="relative h-min w-fit">

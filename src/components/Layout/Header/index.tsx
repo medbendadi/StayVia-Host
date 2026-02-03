@@ -51,7 +51,7 @@ const Header: React.FC = () => {
                 width={sticky ? 60 : 90}
                 height={58}
                 unoptimized={true}
-                className={`${isHomepage ? sticky ? "block dark:hidden ml-7" : "hidden" : sticky ? "block dark:hidden ml-7" : "block dark:hidden"}`}
+                className={`h-auto w-[58px] ${isHomepage ? sticky ? "block dark:hidden ml-7" : "hidden" : sticky ? "block dark:hidden ml-7" : "block dark:hidden"}`}
               />
               <Image
                 src={'/images/header/dark-logo.png'}
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
                 width={sticky ? 60 : 90}
                 height={58}
                 unoptimized={true}
-                className={`${isHomepage ? sticky ? "hidden dark:block ml-7" : "block" : sticky ? "dark:block hidden ml-7" : "dark:block hidden"}`}
+                className={`h-auto w-[58px] ${isHomepage ? sticky ? "hidden dark:block ml-7" : "block" : sticky ? "dark:block hidden ml-7" : "dark:block hidden"}`}
               />
             </Link>
           </div>
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
               />
             </button>
             <div className={`hidden md:block`}>
-              <Link href='#' className={`text-base text-inherit flex items-center gap-2 border-r pr-6 ${isHomepage
+              <Link href='https://wa.me/212610999299' target='_blank' className={`text-base text-inherit flex items-center gap-2 border-r pr-6 ${isHomepage
                 ? sticky
                   ? 'text-dark dark:text-white hover:text-primary active:text-primary border-dark dark:border-white'
                   : 'text-white hover:text-primary active:text-primary'
