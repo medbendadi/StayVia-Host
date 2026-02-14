@@ -64,7 +64,7 @@ const Footer = () => {
 
                 {/* LinkedIn */}
                 <Link
-                  href="https://www.linkedin.com/company/stayvia/" // <-- Change to your real LinkedIn page
+                  href="https://www.linkedin.com/in/stayvia-host-910a1b3a0/" // <-- Change to your real LinkedIn page
                   target="_blank"
                   className="inline-flex items-center gap-3 rounded-full bg-white/10 px-5 py-3 text-sm text-white hover:bg-white hover:text-dark transition-colors duration-300"
                 >

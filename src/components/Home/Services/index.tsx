@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
+import MaintenanceSection from "./MaintenanceSection";
 
 const Categories = () => {
   return (
@@ -62,15 +63,12 @@ const Categories = () => {
 
           {/* HERO IMAGE */}
           <div className="lg:col-span-6 col-span-12 mt-10 lg:mt-0">
-            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden">
-              <Image
-                src="/images/categories/comunication.webp"
-                alt="Communication voyageurs"
-                fill
-                className="object-cover"
-                unoptimized
-              />
-            </div>
+            <FeatureCard
+            aspect='aspect-[16/9]'
+            img="/images/categories/comunication.webp"
+            title="Support et accompagnement des voyageurs"
+            desc="Nous prenons en charge toutes les demandes et les besoins des clients, en assurant une assistance 24h/24 et 7j/7 afin de garantir un séjour sans stress."
+          />
           </div>
         </div>
 
@@ -87,29 +85,33 @@ const Categories = () => {
 
           <FeatureCard
             img="/images/categories/menagee.avif"
-            title="Ménage & Entretien"
-            desc="Nettoyage haut de gamme, gestion du linge et entretien minutieux."
+            title="Nettoyage professionnel et maintenance"
+            desc="Notre équipe veille à ce que votre propriété reste en parfait état grâce à des services de nettoyage de haute qualité et une maintenance régulière."
           />
 
           <FeatureCard
             img="/images/categories/keys.jpg"
             title="Check-in & Check-out"
-            desc="Une arrivée chaleureuse et professionnelle pour offrir la meilleure première impression."
+            desc="Nous offrons une expérience fluide et personnalisée à vos clients, en garantissant des check-ins ponctuels, la remise des clés et un accueil chaleureux."
           />
 
           <FeatureCard
             img="/images/categories/finance.jpg"
-            title="Optimisation des Revenus"
-            desc="Maximisez vos gains grâce à une tarification dynamique et une gestion intelligente des réservations."
+            title="Gestion complète de votre propriété"
+            desc="De l’optimisation de l’annonce à la communication avec les voyageurs, nous prenons en charge chaque aspect de la gestion de votre bien Airbnb afin de maximiser le taux d’occupation et les revenus."
           />
 
           <FeatureCard
-            img="/images/categories/maintenance.jpg"
-            title="Maintenance & Décoration"
-            desc="Nous mobilisons des artisans experts et des décorateurs professionnels pour transformer vos espaces en lieux élégants, fonctionnels et rentables."
+            img="/images/categories/photo.jpg"
+            title="Photographie et marketing de votre bien."
+            desc="Valorisez votre annonce grâce à des photos professionnelles et une stratégie marketing efficace afin d’attirer davantage de voyageurs."
           />
         </div>
+        <MaintenanceSection/>
+
       </div>
+
+
     </section>
   );
 };
@@ -118,10 +120,10 @@ const Categories = () => {
 /* FEATURE CARD COMPONENT              */
 /* ---------------------------------- */
 
-const FeatureCard = ({ img, title, desc }) => {
+const FeatureCard = ({ img, title, desc, aspect='aspect-[3/4]' }) => {
   return (
     <div className="lg:col-span-3 md:col-span-6 col-span-12">
-      <div className="relative aspect-[3/4] rounded-2xl overflow-hidden group">
+      <div className={`relative ${aspect} rounded-2xl overflow-hidden group`}>
         <Image
           src={img}
           alt={title}
