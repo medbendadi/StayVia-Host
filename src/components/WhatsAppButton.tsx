@@ -27,7 +27,7 @@ const WhatsAppButton = ({
                       opacity-0 -translate-x-2 transition-all duration-300 
                       group-hover:opacity-100 group-hover:translate-x-0
                       md:opacity-100 md:translate-x-0">
-        Need Help?
+        Besoin d'aide ?
       </div>
 
       {/* Bouton Icône */}
