@@ -23,7 +23,7 @@ export default function RootLayout({
         {/* AppProvidersClient is a client component that contains ThemeProvider, Header, Footer */}
         <AppProvidersClient>
           {children}
-          <WhatsAppButton phoneNumber="212634596499" />
+          <WhatsAppButton phoneNumber="212610999299" />
           </AppProvidersClient>
       </body>
     </html>
