@@ -22,15 +22,15 @@ const AirbnbTrustSection = () => {
             <ul className="space-y-4 mb-8">
               <li className="flex items-center gap-3 text-dark dark:text-white">
                 <span className="flex-shrink-0 w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs">✓</span>
-                Note parfaite de <strong className="text-primary">5.0</strong> basée sur des dizaines d'avis.
+                <span>Note parfaite de <strong className="text-primary p-0 m-0">5.0</strong> basée sur des dizaines d'avis.</span>
               </li>
               <li className="flex items-center gap-3 text-dark dark:text-white">
                 <span className="flex-shrink-0 w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs">✓</span>
-                Statut de <strong className="text-primary">Superhôte</strong> garantissant réactivité et professionnalisme.
+                <span>Statut de <strong className="text-primary">Superhôte</strong> garantissant réactivité et professionnalisme.</span>
               </li>
               <li className="flex items-center gap-3 text-dark dark:text-white">
                 <span className="flex-shrink-0 w-6 h-6 bg-primary/20 text-primary rounded-full flex items-center justify-center text-xs">✓</span>
-                Distinction<strong className="text-primary">Coup de cœur voyageurs</strong>sur nos propriétés.
+                <span>Distinction <strong className="text-primary">Coup de cœur voyageurs</strong> sur nos propriétés.</span>
               </li>
             </ul>
 
