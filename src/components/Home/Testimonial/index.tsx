@@ -128,8 +128,6 @@ const Testimonial = () => {
     };
   }, []);
 
-  // You’re not using <Carousel> yet, so we’ll keep simple grid like before.
-  // You can plug items into the carousel later if you want.
 
   if (items.length === 0) return null;
 
@@ -157,7 +155,7 @@ const Testimonial = () => {
           50+ Voyageurs satisfaits
         </p>
 
-        <div className="grid md:grid-cols-2 gap-12 justify-center">
+        <div className="grid md:grid-cols-2 gap-12 justify-center mb-10">
           {items.map((t) => (
             <div
               key={t.id}
@@ -205,6 +203,17 @@ const Testimonial = () => {
           ))}
         </div>
       </div>
+
+      {/* <div className="container max-w-8xl mx-auto px-5 2xl:px-0"> 
+        <Image
+          src="/images/testimonial/RBNB.jpeg" // Assurez-vous du nom du fichier ici
+          alt="footer testimonial decoration"
+          width={1920} // Largeur de base pour le ratio
+          height={400} // Ajustez selon les proportions de votre image
+          className="w-full h-auto block" // h-auto garde le ratio, block enlève l'espace sous l'image
+          unoptimized={true}
+        />
+      </div> */}
     </section>
   );
 };

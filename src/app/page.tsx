@@ -10,6 +10,7 @@ import Owners from '@/components/Home/Owners'
 import Roadmap from '@/components/Home/Raodmap'
 import RoomBooking from '@/components/RoomBooking/intex'
 import Example from '@/components/ui/dataPicker'
+import AirbnbProfileSection from '@/components/Home/AirbnbProfileSection'
 // import GoogleTranslate from '@/components/GoogleTranslate'
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <Roadmap />
       <FeaturedProperty />
       <Testimonial />
+      <AirbnbProfileSection/>
       <GetInTouch />
       <FAQ />
     </main>
